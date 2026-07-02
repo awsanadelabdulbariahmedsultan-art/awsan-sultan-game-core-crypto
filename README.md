@@ -24,6 +24,6 @@ All source codes, architectural designs, algorithms, UI/UX frameworks, cryptogra
 * **Nationality:** Republic of Yemen (YEMEN)
 * **National ID:** 01010305468
 * **Contact Email:** awsanadelsultan@outlook.com
-* **International Phone:** 00967776633003
+* **International Phone:** 00967776633003 / 00967777852433
 
 *Any unauthorized copying, modification, reverse engineering, or distribution of this proprietary work is strictly prohibited under local and international copyright and software protection laws.*
