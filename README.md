@@ -10,15 +10,15 @@ An advanced, highly-scalable, cross-platform Web3 Gaming Engine designed to brid
 | المحور البرمجي التقني (Milestone Modules) | الملفات والأنظمة البرمجية (Core Files) | الحالة الحالية (Current Status) |
 | :--- | :--- | :--- |
 | **المحور الأول: البنية التحتية للمستودع والتوثيق** | `README.md` & `.gitignore` Configuration | [✅ تم استكماله] |
-| **المحور الثاني: هندسة البلوكشين والعقود الذكية** | `blockchain-core/contracts/PvPRewards.sol` | [🛠️ جاري العمل عليه] |
-| | `blockchain-core/contracts/ASTToken.sol` | [⏳ قيد الانتظار] |
-| | `blockchain-core/security/SecurityVerification.sol` | [⏳ قيد الانتظار] |
-| **المحور الثالث: تطوير محرك اللعبة والربط البرمجي** | `game-client/scripts/Web3WalletManager.cs` | [⏳ قيد الانتظار] |
-| | `game-client/scripts/PvPMatchManager.cs` (150XP + AST) | [⏳ قيد الانتظار] |
-| | `game-client/config/ScalabilityManager.config` | [⏳ قيد الانتظار] |
-| **المحور الرابع: دمج تقنيات NVIDIA والذكاء الاصطناعي** | `game-client/plugins/NvidiaRTXSuite.dll` | [⏳ قيد الانتظار] |
-| | `game-client/plugins/NvidiaAceLocalAI.dll` (RTX Spark) | [⏳ قيد الانتظار] |
-| | `game-client/plugins/NvidiaReflexSDK.dll` | [⏳ قيد الانتظار] |
+| **المحور الثاني: هندسة البلوكشين والعقود الذكية** | `blockchain-core/contracts/PvPRewards.sol` | [✅ تم استكماله] |
+| | `blockchain-core/contracts/ASTToken.sol` | [✅ تم استكماله] |
+| | `blockchain-core/security/SecurityVerification.sol` | [✅ تم استكماله] |
+| **المحور الثالث: تطوير محرك اللعبة والربط البرمجي** | `game-client/scripts/Web3WalletManager.cs` | [✅ تم استكماله] |
+| | `game-client/scripts/PvPMatchManager.cs` (150XP + AST) | [✅ تم استكماله] |
+| | `game-client/config/ScalabilityManager.config` | [✅ تم استكماله] |
+| **المحور الرابع: دمج تقنيات NVIDIA والذكاء الاصطناعي** | `game-client/plugins/NvidiaRTXSuite.dll` | [✅ تم استكماله] |
+| | `game-client/plugins/NvidiaAceLocalAI.dll` (RTX Spark) | [✅ تم استكماله] |
+| | `game-client/plugins/NvidiaReflexSDK.dll` | ✅ تم استكماله] |
 
 ---
 
