@@ -1,13 +1,13 @@
 using System;
-using System.Collections.Task;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 /**
  * @className AsaAssetManager
  * @dev Intellectual Property of ENG AWSAN ADEL ABDULBARI AHMED SULTAN
- * @notice Automated graphics registry and distribution pipeline for the 45,000 unique 
- *         "Awsan Sultan Art" (ASA) high-fidelity in-game digital assets and NFTs.
+ * @notice Enterprise runtime asset registry, cache pipeline, and distribution engine 
+ *         for the 45,000 unique "Awsan Sultan Art" (ASA) high-fidelity in-game digital assets and NFTs.
  */
 public class AsaAssetManager : MonoBehaviour
 {
@@ -29,15 +29,23 @@ public class AsaAssetManager : MonoBehaviour
         public decimal storeFiatPrice; // القيمة الموازية بالدولار للمتاجر التقليدية (Apple/PlayStation)
     }
 
-    // مجلد أو مصفوفة تخزين الكاش للفنون المستدعاة حالياً داخل اللعبة لتقليل استهلاك الذاكرة
+    // مجلدات تخزين الكاش للفنون والخامات المستدعية حالياً داخل اللعبة لتقليل استهلاك الذاكرة وسرعة الأداء
     private Dictionary<uint, InGameArtworkAsset> activeArtRegistry = new Dictionary<uint, InGameArtworkAsset>();
+    private Dictionary<uint, Texture2D> assetTextureCache = new Dictionary<uint, Texture2D>();
 
     public static AsaAssetManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
-        else { Destroy(gameObject); }
+        if (Instance == null) 
+        { 
+            Instance = this; 
+            DontDestroyOnLoad(gameObject); // الحفاظ على حالة إدارة الأصول مستقرة وكاش الذاكرة فعالاً بين القوائم والمراحل
+        }
+        else 
+        { 
+            Destroy(gameObject); 
+        }
     }
 
     /**
@@ -55,18 +63,20 @@ public class AsaAssetManager : MonoBehaviour
             return false;
         }
 
-        // شرط تخطي الـ 500 XP للحصول على أصول نادرة جداً كما هو مخطط له
+        // شرط تخطي الـ 500 XP للحصول على أصول نادرة جداً كما هو مخطط له من منطقك السابق
         if (playerXp >= 500)
         {
             Debug.Log($"[{DeveloperName}] High XP Tier Verified ({playerXp} XP). Generating Rare Custom Mesh variant...");
             await Task.Delay(500); // محاكاة المعالجة الرسومية المحلية
             
-            // ربط الفن ببوابات المتاجر العالمية للتأكيد المالي
+            // ربط الفن ببوابات المتاجر العالمية للتأكيد المالي عبر البوابة الهجينة للمشروع
             if (GlobalEcosystemGateway.Instance != null)
             {
                 GlobalEcosystemGateway.Instance.ProcessPlatformStorePurchase("PlayStation", $"asa_art_{targetAssetId}");
             }
             
+            // تفعيل التحسين البصري الفوري وتتبع الأشعة للأصل المفتوح
+            ApplyRtxSparkVisualBoostToAsset(targetAssetId);
             return true;
         }
 
@@ -79,10 +89,40 @@ public class AsaAssetManager : MonoBehaviour
      */
     public void ApplyRtxSparkVisualBoostToAsset(uint assetId)
     {
-        if (NvidiaEcosystemBridge.Instance != null && NvidiaEcosystemBridge.Instance.isRtxSparkDetected)
+        // استخدام نظام الفحص المدمج بالـ RtxMaterialMatcher والـ Bridge لتقنيات نيفيديا المتقدمة
+        if (RtxMaterialMatcher.Instance != null && RtxMaterialMatcher.Instance.IsPathTracingActive)
         {
             // عند رصد عتاد إنفيديا الحديث، يتم تفعيل أعلى مستويات تتبع الأشعة والظلال والانسداد المحيطي للفن الرقمي لتبدو مذهلة وسينمائية
-            Debug.Log($"Applying Full Path Tracing and High-Res AI Upscaling to Awsan Sultan Art #{assetId}. Ultra mode enabled.");
+            Debug.Log($"[{DeveloperName}] Hardware verified via pipeline. Applying Full Path Tracing and High-Res AI Upscaling to Awsan Sultan Art #{assetId}. Ultra mode enabled.");
         }
+    }
+
+    // ==========================================
+    // نظام ذاكرة الكاش المؤتمتة لحفظ خامات الـ IPFS (Texture Cache Subsystem)
+    // ==========================================
+
+    /**
+     * @notice حفظ الخامات المحملة من IPFS في الكاش لمنع إعادة جلبها مراراً وتكراراً وتخفيف الضغط
+     */
+    public void CacheDownloadedAsset(uint tokenId, Texture2D texture)
+    {
+        if (texture == null) return;
+        if (!assetTextureCache.ContainsKey(tokenId))
+        {
+            assetTextureCache.Add(tokenId, texture);
+            Debug.Log($"[{DeveloperName}] Texture for Asset #{tokenId} securely cached in runtime memory buffers.");
+        }
+    }
+
+    /**
+     * @notice استدعاء فوري للخامة المخزنة إذا كانت متواجدة مسبقاً في الذاكرة لتسريع حركة المعالجة
+     */
+    public Texture2D GetCachedAsset(uint tokenId)
+    {
+        if (assetTextureCache.TryGetValue(tokenId, out Texture2D texture))
+        {
+            return texture;
+        }
+        return null;
     }
 }
