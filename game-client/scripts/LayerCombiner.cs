@@ -41,7 +41,6 @@ public class LayerCombiner : MonoBehaviour
             runtimeMaterial = itemRenderer.material;
         }
     }
-
     /**
      * @notice دالة دمج الفن الرقمي كسكن (Skin) ديناميكي مع الاحتفاظ بخرائط الإضاءة والظلال من كودك السابق
      * @param artworkTexture الصورة المحملة للفن من الـ 45 ألفاً عبر IPFS
