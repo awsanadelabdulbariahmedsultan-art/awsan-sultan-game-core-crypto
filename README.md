@@ -7,21 +7,21 @@
 An advanced, highly-scalable, cross-platform Web3 Gaming Engine designed to bridge next-generation graphical technologies with decentralized economies. This engine compiles seamlessly across **all Mobile devices, PlayStation, Xbox, and high-end PCs**.
 
 ---
+## 📊 Project Status Board
 
-## 📊 لوحة تحكم هيكل المشروع ومتابعة الإنجاز (Project Status Board)
-
-| المحور البرمجي التقني (Milestone Modules) | الملفات والأنظمة البرمجية (Core Files) | الحالة الحالية (Current Status) |
+| Milestone Modules | Core Files | Current Status |
 | :--- | :--- | :--- |
-| **المحور الأول: البنية التحتية للمستودع والتوثيق** | `README.md` & `.gitignore` Configuration | [✅ تم استكماله] |
-| **المحور الثاني: هندسة البلوكشين والعقود الذكية** | `blockchain-core/contracts/PvPRewards.sol` | [✅ تم استكماله] |
-| | `blockchain-core/contracts/ASTToken.sol` | [✅ تم استكماله] |
-| | `blockchain-core/security/SecurityVerification.sol` | [✅ تم استكماله] |
-| **المحور الثالث: تطوير محرك اللعبة والربط البرمجي** | `game-client/scripts/Web3WalletManager.cs` | [✅ تم استكماله] |
-| | `game-client/scripts/PvPMatchManager.cs` (150XP + AST) | [✅ تم استكماله] |
-| | `game-client/config/ScalabilityManager.config` | [✅ تم استكماله] |
-| **المحور الرابع: دمج تقنيات NVIDIA والذكاء الاصطناعي** | `game-client/plugins/NvidiaRTXSuite.dll` | [✅ تم استكماله] |
-| | `game-client/plugins/NvidiaAceLocalAI.dll` (RTX Spark) | [✅ تم استكماله] |
-| | `game-client/plugins/NvidiaReflexSDK.dll` | ✅ تم استكماله] |
+| **Milestone 1: Repository Infrastructure & Documentation** | `README.md` & `.gitignore` Configuration | [✅ Completed] |
+| **Milestone 2: Blockchain Architecture & Smart Contracts** | `blockchain-core/contracts/PvPRewards.sol` | [✅ Completed] |
+| | `blockchain-core/contracts/ASTToken.sol` | [✅ Completed] |
+| | `blockchain-core/security/SecurityVerification.sol` | [✅ Completed] |
+| **Milestone 3: Game Engine Development & Integration** | `game-client/scripts/Web3WalletManager.cs` | [✅ Completed] |
+| | `game-client/scripts/PvPMatchManager.cs` (150XP + AST) | [✅ Completed] |
+| | `game-client/config/ScalabilityManager.config` | [✅ Completed] |
+| **Milestone 4: NVIDIA Technologies & AI Integration** | `game-client/plugins/NvidiaRTXSuite.dll` | [✅ Completed] |
+| | `game-client/plugins/NvidiaAceLocalAI.dll` (RTX Spark) | [✅ Completed] |
+| | `game-client/plugins/NvidiaReflexSDK.dll` | [✅ Completed] |
+
 
 ---
 
