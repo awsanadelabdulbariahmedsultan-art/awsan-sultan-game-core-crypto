@@ -8,6 +8,7 @@ An advanced, highly-scalable, cross-platform Web3 Gaming Engine designed to brid
 
 ---
 > 🌐 **ENTERPRISE NOTE:** The underlying core infrastructure of this engine has been architected and upgraded into a standalone commercial B2B protocol for corporate integration: **AWSAN SULTAN OMNI-ENGINE PROTOCOL (ASOEP)**. Contracted studios and institutional evaluators can access the proprietary SDK packages and automated fee clearing layer here: [Proprietary B2B Protocol Repository]([https://github.com](https://github.com/awsanadelabdulbariahmedsultan-art/-AWSAN_SULTAN_OMNI-ENGINE_PROTOCAL_-ASOEP-))
+> https://github.com/awsanadelabdulbariahmedsultan-art/-AWSAN_SULTAN_OMNI-ENGINE_PROTOCAL_-ASOEP-
 
 ---
 
@@ -150,6 +151,7 @@ All source codes, architectural designs, algorithms, UI/UX frameworks, cryptogra
 
 ---
 > 🌐 **ملاحظة مؤسسية:** تم استخلاص وترقية البنية التحتية لهذا المحرك وتحويلها إلى بروتوكول تجاري مستقل مخصص للبيع للمؤسسات والشركات (B2B) تحت اسم **AWSAN SULTAN OMNI-ENGINE PROTOCOL (ASOEP)**. يمكن للجهات والشركات المتعاقدة الاطلاع على حزمة الـ SDK وعقود توزيع وحرق الرسوم عبر الرابط التالي: [بروتوكول ASOEP التجاري الحصري على GitHub]([https://github.com](https://github.com/awsanadelabdulbariahmedsultan-art/-AWSAN_SULTAN_OMNI-ENGINE_PROTOCAL_-ASOEP-))
+> https://github.com/awsanadelabdulbariahmedsultan-art/-AWSAN_SULTAN_OMNI-ENGINE_PROTOCAL_-ASOEP-
 
 ---
 ## 📊 لوحة تحكم شاملة لمتابعة إنجاز المشروع (Comprehensive Project Status Board)
