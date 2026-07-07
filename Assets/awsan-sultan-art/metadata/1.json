@@ -1,1 +1,23 @@
-.
+{
+  "name": "Awsan Sultan Art #1",
+  "description": "Unique digital asset from the 45,000 ASA collection integrated with next-gen Web3 gaming engine and NVIDIA RTX Spark.",
+  "image": "ipfs://QmAwsanSultanArtBaseCID/1.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "RTX Boost Capability",
+      "value": "Path Tracing Enhanced"
+    },
+    {
+      "trait_type": "Required Unlock Tier",
+      "value": "500 XP"
+    },
+    {
+      "trait_type": "Original Creator",
+      "value": "ENG AWSAN SULTAN"
+    }
+  ]
+}
