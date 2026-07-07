@@ -55,6 +55,7 @@ awsan-sultan-game-core-crypto/
 │   │   │
 │   │   ├── Managers/              # Central architectural routing orchestrator
 │   │   │   └── GameSystemBridge.cs # Connects logic blocks with runtime graphical elements
+│   │   │   └──  FirebaseBackendManager.cs  # Cloud backend adapter service layer (🔵 New Integration)
 │   │   │
 │   │   ├── Security/              # Anti-cheat layers and signature packaging tools
 │   │   │   ├── SecurityBridge.cs  # Standard security bridge interface
@@ -199,6 +200,7 @@ awsan-sultan-game-core-crypto/
 │   │   │
 │   │   ├── Managers/              # المنسق المركزي لتوجيه البنية المعمارية للعبة
 │   │   │   └── GameSystemBridge.cs # ربط كتل المنطق البرمجي مع العناصر الرسومية في وقت التشغيل
+│   │   │   ├── FirebaseBackendManager.cs  # (الملف الجديد المضاف لإدارة خدمات Google Firebase 🔵)
 │   │   │
 │   │   ├── Security/              # طبقات الحماية من الغش وأدوات حزم التوقيعات الرقمية
 │   │   │   ├── SecurityBridge.cs  # واجهة جسر الأمان القياسية لحماية البيانات
