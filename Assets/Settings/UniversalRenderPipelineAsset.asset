@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7dbc88d839b114ca1bbf335c44439c, type: 3}
+  m_Name: UniversalRenderPipelineAsset
+  m_EditorClassIdentifier: 
+  m_SupportsHDR: 1
+  m_MSAA: 4
+  m_RenderScale: 1
+  m_OpaqueDownsampling: 1
+  m_SupportsTerrainHoles: 1
+  m_SupportsMainLightShadows: 1
+  m_MainLightShadowmapResolution: 2048
+  m_SupportsAdditionalLightShadows: 1
+  m_AdditionalLightsShadowmapResolution: 1024
+  m_CascadeCount: 4
+  m_Cascade2Split: 0.25
+  m_Cascade3Split: 0.1, 0.3
+  m_Cascade4Split: 0.067, 0.2, 0.467
+  m_PipelineCapabilities:
+    m_SupportsRayTracing: 1
+    m_SupportsDLSS: 1
