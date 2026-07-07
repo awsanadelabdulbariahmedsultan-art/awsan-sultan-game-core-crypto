@@ -21,15 +21,56 @@ Developed and architected exclusively by **Eng. Awsan Adel Abdulbari Ahmed Sulta
 | **5. Security Layer** | `SecurityVerification.sol`, `SecurityBridge.cs`, `UnityAntiCheatManager.cs` | On-Chain & Off-Chain Local Shield | **🟢 100% Implemented** |
 
 ---
-
 ## 🗂️ Detailed Project Repository Blueprint
 
 ```text
 awsan-sultan-game-core-crypto/ 
-├── ProjectSettings/               # Engine configuration files for compiler & cloud builds
-│   ├── ProjectVersion.txt         # Targets exact Unity 2022.3.62f1 LTS Editor
-│   ├── EditorBuildSettings.asset  # Manages exact active compiler scenes routing
-│   └── ProjectSettings.asset      # B2B Branding, product info, and build configurations
+├── Assets/                        # Unity Project active components directory root
+│   ├── Plugins/                   # System bridges and binary dependencies
+│   │   └── Nvidia/
+│   │       └── NvidiaEcosystemBridge.cs # Wrapper for RTX Spark, Reflex, and DLSS pipelines
+│   │
+│   ├── Scenes/                    # Interactive runtime workspace window scenes
+│   │   ├── MainMenuScene.unity    # Standard UI initialization canvas and gateway login
+│   │   └── DemoSimulationScene.unity # Stress-test simulation canvas dashboard workspace
+│   │
+│   ├── Settings/
+│   │   └── UniversalRenderPipelineAsset.asset # High-Performance Hybrid Graphics Configuration
+│   │
+│   ├── Scripts/                   # Backend control scripts handling Web3 connections and game logic
+│   │   ├── Core/                  # Heavy Backend Logic & Autonomous Simulation Loops
+│   │   │   ├── AsaAssetManager.cs # Script managing game assets and texture cache buffers
+│   │   │   ├── AsaMetadataGenerator.cs # Generates dynamic 45,000 asset traits locally (GTA6 Inspired)
+│   │   │   ├── AsgccAIEngine.cs   # Core AI engine script for context-aware local NPCs with XP filters
+│   │   │   ├── AsgccTestingSuite.cs # Automated testing and validation suite for engine performance
+│   │   │   ├── GlobalEcosystemGateway.cs # Global gateway script for multi-wallet and exchange integrations
+│   │   │   ├── LayerCombiner.cs   # Script for blending graphical layers and injecting skin textures
+│   │   │   ├── PvPMatchManager.cs # Controller for PvP matchmaking, battles, and real-time UI state sync
+│   │   │   ├── RtxMaterialMatcher.cs # Material mapping script for high-end NVIDIA RTX configurations
+│   │   │   └── Web3WalletManager.cs # Web3 wallet controller for secure player authentication
+│   │   │
+│   │   ├── Config/                # Scalability parsers and local preference cache controllers
+│   │   │   ├── ScalabilityParser.cs # Parses dynamic hardware scale settings
+│   │   │   └── PlayerSettingsPrefs.cs # Manages local client preference states
+│   │   │
+│   │   ├── Managers/              # Central architectural routing orchestrator
+│   │   │   └── GameSystemBridge.cs # Connects logic blocks with runtime graphical elements
+│   │   │
+│   │   ├── Security/              # Anti-cheat layers and signature packaging tools
+│   │   │   ├── SecurityBridge.cs  # Standard security bridge interface
+│   │   │   └── UnityAntiCheatManager.cs # Realtime memory RAM inspection agent
+│   │   │
+│   │   └── UI/                    # TextMeshPro controller adapters for canvas views
+│   │       ├── WalletUIController.cs # Dynamic wallet connection panel handler
+│   │       ├── MatchmakingUI.cs   # Realtime PvP matchmaking queue display controller
+│   │       └── DataFlowVisualizer.cs # Visualizer dashboard for local AI and Web3 operations
+│   │
+│   └── awsan-sultan-art/          # Core digital art assets and pipeline generation logic
+│       ├── metadata/
+│       │   └── 1.json             # Digital asset metadata file uploaded for the ASA gallery
+│       └── procedural-generator/
+│           └── AsaProceduralGenerator.cs # Procedural generation script for asset layering from IPFS
+│
 ├── blockchain-core/               # Secure Blockchain architecture and EVM protocol layers
 │   ├── contracts/                 # Smart Contracts (Solidity)
 │   │   ├── ASTToken.sol           # Core ecosystem currency tokenomics contract
@@ -37,43 +78,22 @@ awsan-sultan-game-core-crypto/
 │   │   └── PvPRewards.sol         # Autonomous PvP win-to-earn dynamic distribution
 │   └── security/
 │       └── SecurityVerification.sol # Advanced on-chain cryptographic safety verification
+│
 ├── docs/                          # Engineering diagrams, technical flowcharts, whitepapers
 │   ├── DATA_FLOW_DIAGRAM.md       # Interactive mapping of local AI & Web3 infrastructure
 │   ├── DEMO_GUIDE.md              # Blueprint to execute automated multi-node simulations
 │   └── Whitepaper.md              # Corporate B2B positioning strategy documentation
-└── Assets/                        # Unity Project active components directory root
-    ├── Plugins/                   # System bridges and binary dependencies
-    │   └── Nvidia/
-    │       └── NvidiaEcosystemBridge.cs # Wrapper for RTX Spark, Reflex, and DLSS pipelines
-    ├── Scenes/                    # Interactive runtime workspace window scenes
-    │   ├── MainMenuScene.unity    # Standard UI initialization canvas and gateway login
-    │   └── DemoSimulationScene.unity # Stress-test simulation canvas dashboard workspace
-    ├── Settings/
-    │   └── UniversalRenderPipelineAsset.asset # High-Performance Hybrid Graphics Configuration
-    └── Scripts/
-        ├── Core/                  # Heavy Backend Logic & Autonomous Simulation Loops
-        │   ├── AsaAssetManager.cs
-        │   ├── AsaMetadataGenerator.cs
-        │   ├── AsgccAIEngine.cs   # Local local AI dialogue engine logic
-        │   ├── AsgccTestingSuite.cs
-        │   ├── GlobalEcosystemGateway.cs
-        │   ├── LayerCombiner.cs
-        │   ├── PvPMatchManager.cs # Matchmaking state logic
-        │   ├── RtxMaterialMatcher.cs
-        │   └── Web3WalletManager.cs
-        ├── Config/                # Scalability parsers and local preference cache controllers
-        │   ├── ScalabilityParser.cs
-        │   └── PlayerSettingsPrefs.cs
-        ├── Managers/              # Central architectural routing orchestrator
-        │   └── GameSystemBridge.cs # Connects logic blocks with runtime graphical elements
-        ├── Security/              # Anti-cheat layers and signature packaging tools
-        │   ├── SecurityBridge.cs
-        │   └── UnityAntiCheatManager.cs # Realtime memory RAM inspection agent
-        └── UI/                    # TextMeshPro controller adapters for canvas views
-            ├── WalletUIController.cs
-            ├── MatchmakingUI.cs
-            └── DataFlowVisualizer.cs
+│
+├── game-client/                  # Cross-platform deployment assets and software scaling config
+│   └── config/                   # Configuration files for dynamic performance and hardware scaling
+│       └── ScalabilityManager.config # Configuration file for mobile compatibility and optimization tuning
+│
+└── ProjectSettings/               # Engine configuration files for compiler & cloud builds
+    ├── ProjectVersion.txt         # Targets exact Unity 2022.3.62f1 LTS Editor
+    ├── EditorBuildSettings.asset  # Manages exact active compiler scenes routing
+    └── ProjectSettings.asset      # B2B Branding, product info, and build configurations
 ```
+
 
 ---
 
@@ -145,59 +165,79 @@ This piece of engineering work, source code scripts, smart contracts, data flows
 | **5. الطبقة الأمنية** | `SecurityVerification.sol`, `SecurityBridge.cs`, `UnityAntiCheatManager.cs` | الحماية المزدوجة (على السلسلة ومحلياً) | **🟢 مكتمل 100%** |
 
 ---
-
-## 🗂️ المخطط الشجري التفصيلي لبنية المستودع (Blueprint)
+## 🗂️ المخطط التفصيلي لمستودع المشروع (Repository Blueprint)
 
 ```text
 awsan-sultan-game-core-crypto/ 
-├── ProjectSettings/               # ملفات تكوين المحرك الخاصة بالمترجم ومنصات البناء السحابية
-│   ├── ProjectVersion.txt         # يحدد إصدار المحرك الدقيق المستهدف Unity 2022.3.62f1 LTS
-│   ├── EditorBuildSettings.asset  # يدير مسارات وتوجيه المشاهد النشطة أثناء التجميع والـ Build
-│   └── ProjectSettings.asset      # هوية اللعبة، معلومات المطور، وإعدادات بناء المنصات
-├── blockchain-core/               # معمارية البلوكتشين الآمنة وطبقات بروتوكول الـ EVM
+├── Assets/                        # المجلد الرئيسي لجميع مكونات مشروع يونيتي النشطة
+│   ├── Plugins/                   # جسور النظام وحزم الربط البرمجية والاعتمادات الخارجية
+│   │   └── Nvidia/
+│   │       └── NvidiaEcosystemBridge.cs # مغلف برمي موحد لتقنيات RTX Spark و Reflex و DLSS
+│   │
+│   ├── Scenes/                    # مشاهد وبيئات العمل التفاعلية أثناء تشغيل اللعبة
+│   │   ├── MainMenuScene.unity    # واجهة المستخدم الرئيسية وبوابة تسجيل الدخول للمحفظة
+│   │   └── DemoSimulationScene.unity # لوحة تحكم ومساحة عمل محاكاة اختبار الضغط والأداء
+│   │
+│   ├── Settings/
+│   │   └── UniversalRenderPipelineAsset.asset # إعدادات تكوين الرسوميات الهجينة عالية الأداء (URP)
+│   │
+│   ├── Scripts/                   # البرمجيات الخلفية للتحكم باللعبة والربط مع الـ Web3 والذكاء الاصطناعي
+│   │   ├── Core/                  # المنطق البرمجي الأساسي وحلقات المحاكاة المستقلة الثقيلة
+│   │   │   ├── AsaAssetManager.cs # إدارة أصول اللعبة ومخزن ذاكرة التخزين المؤقت للقوام (Textures)
+│   │   │   ├── AsaMetadataGenerator.cs # توليد خصائص الأصول ديناميكيًا لـ 45,000 أصل محليًا (مستوحى من GTA6)
+│   │   │   ├── AsgccAIEngine.cs   # محرك الذكاء الاصطناعي المحلي للحوارات والـ NPCs مع فلاتر الـ XP
+│   │   │   ├── AsgccTestingSuite.cs # حزمة الاختبارات المؤتمتة والتحقق من كفاءة وأداء المحرك
+│   │   │   ├── GlobalEcosystemGateway.cs # البوابة العالمية لمعالجة عمليات دمج المحافظ والبورصات المتعددة
+│   │   │   ├── LayerCombiner.cs   # دمج وخلط الطبقات الرسومية وحقن ملامح وتفاصيل المظهر (Skins)
+│   │   │   ├── PvPMatchManager.cs # التحكم في تداول معارك الـ PvP ومزامنة حالات واجهة المستخدم فوريًا
+│   │   │   ├── RtxMaterialMatcher.cs # ربط وتعيين المواد البرمجية لتهيئة رسوميات NVIDIA RTX المتقدمة
+│   │   │   └── Web3WalletManager.cs # متحكم محفظة الـ Web3 للمصادقة الآمنة للاعبين والعمليات المالية
+│   │   │
+│   │   ├── Config/                # محللات تدرج الأداء ومتحكمات الذاكرة المؤقتة للتفضيلات المحلية
+│   │   │   ├── ScalabilityParser.cs # تحليل قراءة إعدادات تدرج وتوافق العتاد البرمجي ديناميكيًا
+│   │   │   └── PlayerSettingsPrefs.cs # إدارة تفضيلات وحالات العميل المحفوظة محليًا
+│   │   │
+│   │   ├── Managers/              # المنسق المركزي لتوجيه البنية المعمارية للعبة
+│   │   │   └── GameSystemBridge.cs # ربط كتل المنطق البرمجي مع العناصر الرسومية في وقت التشغيل
+│   │   │
+│   │   ├── Security/              # طبقات الحماية من الغش وأدوات حزم التوقيعات الرقمية
+│   │   │   ├── SecurityBridge.cs  # واجهة جسر الأمان القياسية لحماية البيانات
+│   │   │   └── UnityAntiCheatManager.cs # وكيل فحص ومراقبة ذاكرة الوصول العشوائي (RAM) بالوقت الفعلي
+│   │   │
+│   │   └── UI/                    # محولات واجهة المستخدم (TextMeshPro) للوحات التحكم
+│   │       ├── WalletUIController.cs # معالج اللوحة الديناميكية لربط وتوصيل المحفظة الرقمية
+│   │       ├── MatchmakingUI.cs   # شاشة عرض قائمة انتظار وتوافق اللاعبين في معارك PvP فوريًا
+│   │       └── DataFlowVisualizer.cs # لوحة مرئية لمراقبة تدفق بيانات الذكاء الاصطناعي والـ Web3
+│   │
+│   └── awsan-sultan-art/          # الأصول الفنية الرقمية ومنطق خطوط الإنتاج التوليدي
+│       ├── metadata/
+│       │   └── 1.json             # ملف البيانات الوصفية المرفوع لمعرض أصول الـ ASA
+│       └── procedural-generator/
+│           └── AsaProceduralGenerator.cs # سكربت التوليد الإجرائي لطبقات الأصول من شبكة IPFS
+│
+├── blockchain-core/               # بنية البلوكشين الآمنة وطبقات بروتوكول EVM
 │   ├── contracts/                 # العقود الذكية (Solidity)
-│   │   ├── ASTToken.sol           # عقد العملة الرقمية الأساسية واقتصاد النظام (Tokenomics)
-│   │   ├── AsaOmnichainAST.sol    # جسر النقل عبر الشبكات المتعددة القائم على بروتوكول LayerZero
-│   │   └── PvPRewards.sol         # نظام التوزيع التلقائي لمكافآت مباريات الـ PvP على السلسلة
+│   │   ├── ASTToken.sol           # عقد الرمز المميز والتوكينوميكس الخاص بالعملة الأساسية للنظام
+│   │   ├── AsaOmnichainAST.sol    # واجهة الجسر العابر للشبكات المدعومة بتقنية LayerZero
+│   │   └── PvPRewards.sol         # التوزيع الديناميكي المستقل لمكافآت الفوز في معارك PvP (Win-to-Earn)
 │   └── security/
-│       └── SecurityVerification.sol # عقد التحقق الأمني التشفيري المتقدم على السلسلة
-├── docs/                          # الوثائق الهندسية، مخططات تدفق البيانات، والأدلة التقنية
-│   ├── DATA_FLOW_DIAGRAM.md       # مخطط تفاعلي لربط البنية التحتية بين الذكاء الاصطناعي والويب 3
-│   ├── DEMO_GUIDE.md              # دليل تشغيل محاكاة العقد البرمجية وفحص الضغط الأوتوماتيكي
-│   └── Whitepaper.md              # وثيقة الشرح التقني والاستراتيجي للمشروع وموقعه الاستثماري
-└── Assets/                        # المجلد الرئيسي النشط لكافة أصول ومكونات محرك Unity
-    ├── Plugins/                   # المجلد الخاص بالمكتبات الخارجية وجسور الربط الديناميكية
-    │   └── Nvidia/
-    │       └── NvidiaEcosystemBridge.cs # جسر ربط خطوط الرندرة لتقنيات RTX Spark, Reflex, DLSS
-    ├── Scenes/                    # بيئات العمل والشاشات التفاعلية لـ Unity
-    │   ├── MainMenuScene.unity    # شاشة البداية وقوائم تسجيل الدخول وربط المحفظة الرقمية
-    │   └── DemoSimulationScene.unity # شاشة لوحة تحكم محاكاة فحص الضغط واختبار البنية التحتية
-    ├── Settings/
-    │   └── UniversalRenderPipelineAsset.asset # ملف إعدادات الجرافيكس الهجين متطور الأداء (URP)
-    └── Scripts/
-        ├── Core/                  # الأنظمة المنطقية العميقة وحلقات المحاكاة المستقلة في الخلفية
-        │   ├── AsaAssetManager.cs
-        │   ├── AsaMetadataGenerator.cs
-        │   ├── AsgccAIEngine.cs   # نواة محرك محادثات الذكاء الاصطناعي المحلي
-        │   ├── AsgccTestingSuite.cs
-        │   ├── GlobalEcosystemGateway.cs
-        │   ├── LayerCombiner.cs
-        │   ├── PvPMatchManager.cs # نظام إدارة منطق وحالات البحث عن المباريات التنافسية
-        │   ├── RtxMaterialMatcher.cs
-        │   └── Web3WalletManager.cs
-        ├── Config/                # مفسرات إعدادات الأداء الرسومي وحفظ خيارات اللاعب محلياً
-        │   ├── ScalabilityParser.cs
-        │   └── PlayerSettingsPrefs.cs
-        ├── Managers/              # الموجه المعماري المركزي للمشروع
-        │   └── GameSystemBridge.cs # يربط كتل المنطق الخلفية مع عناصر واجهة العرض الرسومية الحية
-        ├── Security/              # طبقات مكافحة الغش وتغليف التواقيع الرقمية المشفرة
-        │   ├── SecurityBridge.cs
-        │   └── UnityAntiCheatManager.cs # وكيل فحص ومراقبة ذاكرة الـ RAM للجهاز في الوقت الفعلي
-        └── UI/                    # محولات واجهة المستخدم الرسومية المربوطة بلوحة الرسم
-            ├── WalletUIController.cs
-            ├── MatchmakingUI.cs
-            └── DataFlowVisualizer.cs
+│       └── SecurityVerification.sol # التحقق التشفيري المتقدم لسلامة العمليات على الشبكة (On-Chain)
+│
+├── docs/                          # المخططات الهندسية، خرائط التدفق التقنية، والأوراق البيضاء
+│   ├── DATA_FLOW_DIAGRAM.md       # رسم بياني تفاعلي لربط البنية التحتية للذكاء الاصطناعي والـ Web3
+│   ├── DEMO_GUIDE.md              # دليل تشغيل محاكاة الأنظمة المتعددة المؤتمتة (Multi-Node)
+│   └── Whitepaper.md              # وثيقة استراتيجية التموضع التجاري الموجه للشركات (B2B)
+│
+├── game-client/                  # أصول النشر عبر المنصات وتكوينات كفاءة تشغيل النظام
+│   └── config/                   # ملفات التكوين الخاصة بالأداء الديناميكي وتوافق العتاد
+│       └── ScalabilityManager.config # ملف إعدادات التوافق مع الهواتف المحمولة وضبط التحسينات
+│
+└── ProjectSettings/               # ملفات تكوين المحرك الخاصة بالمترجم (Compiler) والبناء السحابي
+    ├── ProjectVersion.txt         # تحديد إصدار محرر يونيتي المستهدف بدقة وهو Unity 2022.3.62f1 LTS
+    ├── EditorBuildSettings.asset  # إدارة مسارات وتوجيه المشاهد النشطة داخل المترجم بدقة
+    └── ProjectSettings.asset      # الهوية التجارية (B2B)، معلومات المنتج، وإعدادات البناء والتصدير
 ```
+
 
 ---
 
