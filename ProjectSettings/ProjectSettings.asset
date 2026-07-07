@@ -1,1 +1,15 @@
- 
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 22
+  companyName: ENG AWSAN SULTAN
+  productName: awsan-sultan-game-core-crypto
+  defaultInterfaceOrientation: 3
+  renderingPath: 1
+  m_ActiveColorSpace: 1
+  bundleVersion: 1.0.0
+  m_SupportedAspectRatios:
+    - 1
+    - 2
