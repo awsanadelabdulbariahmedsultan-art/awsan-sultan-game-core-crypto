@@ -8,6 +8,8 @@ using UnityEngine.Networking;
 
 /**
  * @className AsgccAiEngine
+ * @version v4.3-LiveOps-Ready
+ * @date October 25, 2026
  * @dev Intellectual Property of ENG AWSAN ADEL ABDULBARI AHMED SULTAN
  * @notice Hybrid Local & Cloud Generative AI Engine integrating NVIDIA ACE SDK and Google Gemini API.
  *         Executes high-fidelity NPC contextual dialogue linked to player XP with automated cloud fallback.
@@ -18,6 +20,7 @@ namespace AwsanSultan.GameCore.Core
     {
         public const string DeveloperName = "ENG AWSAN ADEL ABDULBARI AHMED SULTAN";
         public const string DeveloperID = "01010305468";
+        public const string DeploymentDate = "2026-10-25";
 
         [Header("Google AI Studio Config (Fallback Cloud)")]
         [SerializeField] private string apiKey = "AQ.Ab8RN6K4Sw85HA6Q8h5WbioNP5MPKoRl79oEG_4iqQvxtUe2ng"; 
@@ -31,7 +34,7 @@ namespace AwsanSultan.GameCore.Core
         [Header("Ecosystem Guardrails & Context")]
         [Range(0.1f, 1.0f)] [SerializeField] private float aiCreativityTemperature = 0.7f;
         [SerializeField] private int maxLocalTokenContext = 2048;
-        [TextArea(3, 5)] [SerializeField] private string currentDynamicAssetContext = ""; // السياق المحقون للأصول الفنية
+        [TextArea(3, 5)] [SerializeField] private string currentDynamicAssetContext = "";
 
         [Header("Automated Model Updates (LiveOps)")]
         [SerializeField] private string modelUpdateUrl = "https://awsansultan-asgcc.com";
@@ -48,7 +51,7 @@ namespace AwsanSultan.GameCore.Core
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
-                StartCoroutine(CheckForRemoteModelUpdates()); // فحص وتحديث عقل الذكاء الاصطناعي تلقائياً عند تشغيل اللعبة
+                StartCoroutine(CheckForRemoteModelUpdates());
             }
             else
             {
@@ -61,9 +64,6 @@ namespace AwsanSultan.GameCore.Core
             InitializeLocalNvidiaAiSubsystem();
         }
 
-        /**
-         * @notice آلية التحديث التلقائي الصامت لأوزان وسلوكيات الذكاء الاصطناعي دون الحاجة لتحديث اللعبة من المتاجر
-         */
         private IEnumerator CheckForRemoteModelUpdates()
         {
             using (UnityWebRequest request = UnityWebRequest.Get(modelUpdateUrl))
@@ -71,8 +71,7 @@ namespace AwsanSultan.GameCore.Core
                 yield return request.SendWebRequest();
                 if (request.result == UnityWebRequest.Result.Success)
                 {
-                    Debug.Log($"[{DeveloperName} - AI LiveOps] Checked for neural weights updates. Engine is synchronized with the latest behavioral profile.");
-                    // هنا يتم تلقي وحقن أوزان السلوكيات الجديدة للـ AI Teammates تلقائياً
+                    Debug.Log($"[{DeveloperName} - AI LiveOps Sync: {DeploymentDate}] Engine synchronized with latest behavior matrix.");
                 }
             }
         }
@@ -91,14 +90,12 @@ namespace AwsanSultan.GameCore.Core
             {
                 IsNvidiaAceInitialized = false;
                 ActiveModelProfile = "CPU_Fallback_Cloud_Bridge";
-                Debug.LogWarning("[AI Fallback] RTX Spark hardware missing. Falling back to Gemini Cloud API Bridge (Incurs structural server costs).");
+                Debug.LogWarning("[AI Fallback] RTX Spark hardware missing. Falling back to Gemini Cloud API Bridge.");
             }
         }
 
         public async void GenerateNpcResponse(string playerPrompt, uint playerXp, OnAIResponseReceived callback)
         {
-            Debug.Log($"[{DeveloperName}] Processing AI Generation Pipeline...");
-
             if (IsNvidiaAceInitialized && ActiveModelProfile == "NVIDIA_ACE_LOCAL_CORE")
             {
                 await Task.Delay(300); 
@@ -107,18 +104,12 @@ namespace AwsanSultan.GameCore.Core
                 return;
             }
 
-            Debug.LogWarning($"[{DeveloperName}] Device incompatible with RTX Spark. Activating Gemini Cloud Engine...");
-            
-            // دمج سياق الأصل الفني الحالي المجلوب من الـ IPFS تلقائياً وإرساله للسحاب
-            string cloudPromptContext = $"Current Art Context: {currentDynamicAssetContext}. Player XP: {playerXp}. Context: The player says: '{playerPrompt}'. " +
-                                         $"Respond as an AI NPC Guide based on this dynamic state.";
-            
+            string cloudPromptContext = $"Current Art Context: {currentDynamicAssetContext}. Player XP: {playerXp}. Context: The player says: '{playerPrompt}'.";
             StartCoroutine(PostToGeminiStudio(cloudPromptContext, callback));
         }
 
         private string ProcessLocalXpLogic(uint playerXp, string playerPrompt)
         {
-            // إدماج سياق الفن المولّد في الرد المحلي للتفاعل مع أسلوب اللاعب وممتلكاته الفنية
             string assetReaction = !string.IsNullOrEmpty(currentDynamicAssetContext) ? " I detect your freshly synthesized Awsan Sultan Art asset in your inventory." : "";
 
             if (playerXp >= 500)
@@ -150,24 +141,19 @@ namespace AwsanSultan.GameCore.Core
 
                 if (request.result == UnityWebRequest.Result.Success)
                 {
-                    Debug.Log($"[{DeveloperName}] Cloud Response successfully generated via Gemini.");
                     callback?.Invoke(request.downloadHandler.text);
                 }
                 else
                 {
-                    Debug.LogError($"[ASGCC AI Cloud Error] API Call Failed: {request.error}");
                     callback?.Invoke("[AI Fallback Error]: خطأ في الاتصال بمحرك الذكاء الاصطناعي السحابي.");
                 }
             }
         }
 
-        /**
-         * @notice استقبال البيانات الوصفية من كود التوليد الإجرائي وحقنها تلقائياً ليتفاعل الـ الـ AI مع ممتلكات اللاعب فوراُ
-         */
         public void InjectDynamicAssetContextToAi(string metadataPayload)
         {
             currentDynamicAssetContext = metadataPayload;
-            Debug.Log($"[{DeveloperName} - AI Context Expanded] Engine state updated with fresh Awsan Sultan Art Asset Metadata profile.");
+            Debug.Log($"[{DeveloperName} - AI Context Expanded: {DeploymentDate}] Engine state updated with fresh ASA Art profile.");
         }
 
         public void ShutdownAiEngine()
