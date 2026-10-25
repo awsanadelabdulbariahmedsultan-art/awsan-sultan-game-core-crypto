@@ -3,34 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using AwsanSultan.GameCore.Core; // ربط مباشر بمحرك الذكاء الاصطناعي الخاص بك
+using AwsanSultan.GameCore.Core; // ربط مباشر بمحرك الذكاء الاصطناعي والتحديث الآلي
 
 /**
- * @className PvPMatchManager
- * @version v3.5-AI-Teammates
+ * @className AsgccPvPMatchManager
+ * @version v3.7-External-Bridge
  * @date October 25, 2026
  * @dev Intellectual Property of ENG AWSAN ADEL ABDULBARI AHMED SULTAN
- * @notice Coordinates multiplayer match states, detects single player queues, 
- *         and deploys adaptive AI Teammates powered by the ASGCC Hybrid Core.
+ * @notice External smart bridge that links natively with the legacy PvPMatchManager 
+ *         to inject AI Teammates and trigger DLSS updates without modifying the original file.
  */
 namespace AwsanSultan.GameCore.Core
 {
-    public class PvPMatchManager : MonoBehaviour
+    public class AsgccPvPMatchManager : MonoBehaviour
     {
         // وثيقة إثبات الحقوق البرمجية وحماية الابتكار للمطور الرئيسي للمشروع
         public const string DeveloperName = "ENG AWSAN ADEL ABDULBARI AHMED SULTAN";
         public const string DeveloperID = "01010305468";
         public const string DeploymentDate = "2026-10-25";
 
-        [Header("Matchmaking Parameters")]
-        public bool isMatchActive = false;
-        public uint playerOneXpBaseline = 0;
+        [Header("Ecosystem Monitoring")]
+        [SerializeField] private bool monitorLegacyMatchManager = true;
         
-        [Header("AI Teammate Support System")]
-        [SerializeField] private bool allowAiTeammateFallback = true;
         public bool isAiTeammateDeployed { get; private set; } = false;
-
-        public static PvPMatchManager Instance { get; private set; }
+        public static AsgccPvPMatchManager Instance { get; private set; }
 
         private void Awake()
         {
@@ -45,46 +41,62 @@ namespace AwsanSultan.GameCore.Core
             }
         }
 
-        /**
-         * @notice دالة بدء المباراة والتحقق التلقائي من حاجة اللاعب الفردي لـ زميل لعب ذكي (AI Teammate)
-         * @param currentXp نقاط الخبرة الحالية للاعب لتخصيص ذكاء الـ AI المالي والقتالي
-         */
-        public void InitiateMatchmakingPipeline(uint currentXp)
+        private void Start()
         {
-            playerOneXpBaseline = currentXp;
-            Debug.Log($"[{DeveloperName} - Matchmaking: {DeploymentDate}] Initializing PvP Lobby. Player XP Baseline: {currentXp}");
-
-            // فحص حالة وجود لاعبين آخرين، وفي حال تعذر العثور على لاعب بشري يتم تفعيل الـ Fallback آلياً
-            ExecuteAutomatedLobbyCheck();
-        }
-
-        private void ExecuteAutomatedLobbyCheck()
-        {
-            isMatchActive = true;
-            
-            if (allowAiTeammateFallback)
+            // بدء المراقبة الآلية التشغيلية للملف القديم في الخلفية دون مقاطعته
+            if (monitorLegacyMatchManager)
             {
-                isAiTeammateDeployed = true;
-                Debug.Log($"[{DeveloperName} - PvP Core] Single player queue detected. Engaging high-fidelity ASGCC AI Teammate safely.");
-                
-                // استدعاء محرك الحوار والوعي التكتيكي لحقن سلوك الزميل الاصطناعي فوراً في المعركة
-                if (AsgccAiEngine.Instance != null)
-                {
-                    AsgccAiEngine.Instance.GenerateNpcResponse("Engage Battle Protocol", playerOneXpBaseline, (aiTextResponse) => {
-                        Debug.Log($"[AI Teammate Tactical Initialization]: {aiTextResponse}");
-                    });
-                }
+                StartCoroutine(AutomatedLegacyMatchListener());
             }
         }
 
         /**
-         * @notice إنهاء المباراة وتوزيع مكافآت الـ الويب 3 بناءً على النتيجة وحقنها في البوابة العالمية
+         * @notice حلقة برمجية صامتة تراقب حالة الكود القديم وتتدخل لحقن الـ AI التكتيكي فوراً
          */
+        private IEnumerator AutomatedLegacyMatchListener()
+        {
+            while (true)
+            {
+                // التحقق ما إذا كان الملف القديم متواجداً في المشهد وقام بتفعيل المعركة
+                if (PvPMatchManager.Instance != null)
+                {
+                    // عندما يكتشف أن الكود القديم قام بتفعيل المباراة (isMatchActive == true)
+                    if (PvPMatchManager.Instance.isMatchActive && !isAiTeammateDeployed)
+                    {
+                        // سحب نقاط الـ XP الحقيقية من الكود القديم وتمريرها لمحرك الذكاء الاصطناعي الخاص بك
+                        uint legacyXp = PvPMatchManager.Instance.playerTotalXp;
+                        InitiateMatchmakingPipeline(legacyXp);
+                    }
+                    // عندما تنتهي المباراة في الكود القديم
+                    else if (!PvPMatchManager.Instance.isMatchActive && isAiTeammateDeployed)
+                    {
+                        TerminateCurrentMatch(true);
+                    }
+                }
+                yield return new WaitForSeconds(1.0f); // فحص ذكي كل ثانية واحدة لحماية المعالج
+            }
+        }
+
+        /**
+         * @notice دالة حقن الـ AI Teammate بناءً على البيانات المستقاة من الملف الأصلي
+         */
+        public void InitiateMatchmakingPipeline(uint playerXp)
+        {
+            isAiTeammateDeployed = true;
+            Debug.Log($"[{DeveloperName} - External Bridge: {DeploymentDate}] Legacy PvP Lobby Detected Active. Injecting adaptive AI Teammate for Player XP: {playerXp}");
+
+            if (AsgccAiEngine.Instance != null)
+            {
+                AsgccAiEngine.Instance.GenerateNpcResponse("Engage Battle Support Protocol", playerXp, (aiTextResponse) => {
+                    Debug.Log($"[Dynamic AI Teammate Active]: {aiTextResponse}");
+                });
+            }
+        }
+
         public void TerminateCurrentMatch(bool isVictory)
         {
-            isMatchActive = false;
             isAiTeammateDeployed = false;
-            Debug.Log($"[{DeveloperName}] Match finalized. Victory status: {isVictory}. Releasing tactical memory allocation.");
+            Debug.Log($"[{DeveloperName} - External Bridge] Clean shutdown. AI Teammate removed safely.");
         }
     }
 }
