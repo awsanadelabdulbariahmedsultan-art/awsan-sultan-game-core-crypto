@@ -25,85 +25,95 @@ Developed and architected exclusively by **Eng. Awsan Adel Abdulbari Ahmed Sulta
 
 ```text
 awsan-sultan-game-core-crypto/ 
-├── Assets/                        # Unity Project active components directory root
-│   ├── Plugins/                   # System bridges and binary dependencies
-│   │   └── Nvidia/
-│   │       └── NvidiaEcosystemBridge.cs # Wrapper for RTX Spark, Reflex, and DLSS pipelines
-│   │
-│   ├── Scenes/                    # Interactive runtime workspace window scenes
-│   │   ├── MainMenuScene.unity    # Standard UI initialization canvas and gateway login
-│   │   └── DemoSimulationScene.unity # Stress-test simulation canvas dashboard workspace
-│   │
-│   ├── Settings/
-│   │   └── UniversalRenderPipelineAsset.asset # High-Performance Hybrid Graphics Configuration
-│   │
-│   ├── Scripts/                   # Backend control scripts handling Web3 connections and game logic
-│   │   │
-│   │   ├── AI-LiveOps/            # 🧠 Core Generative AI & Autonomous Runtime Engines (🔵 New Integration)
-│   │   │   ├── AsgccAiEngine.cs   # Hybrid local NVIDIA ACE SDK (v4.3) & Gemini Cloud API Fallback Engine [Dated: 2026-10-26]
-│   │   │   └── AsaProceduralGenerator.cs # Core procedural engine for loading, caching, and applying textures from IPFS
-│   │   │
-│   │   ├── Core/                  # Heavy Backend Logic & Autonomous Simulation Loops
-│   │   │   ├── AsaMetadataGenerator.cs # Generates dynamic 45,000 asset traits locally (GTA6 Inspired)
-│   │   │   ├── AsgccTestingSuite.cs # Automated testing and validation suite for engine performance
-│   │   │   ├── LayerCombiner.cs   # Script for blending graphical layers and injecting skin textures
-│   │   │   ├── PvPMatchManager.cs # Original standalone Web3 Win-to-Earn PvP Match orchestrator [Main Branch Legacy]
-│   │   │   ├── RtxMaterialMatcher.cs # Material mapping script for high-end NVIDIA RTX configurations
-│   │   │   └── Web3WalletManager.cs # Web3 wallet controller for secure player authentication
-│   │   │
-│   │   ├── Config/                # Scalability parsers and local preference cache controllers
-│   │   │   ├── AsgccScalabilityParser.cs # Mapped JSON parser to synchronize NVIDIA DLSS 4 & Unity Quality states [🔵 New Integration]
-│   │   │   ├── AsgccScalabilityManager.config # Hardware configuration version (v1.2-LiveOps) profile file [🔵 New Integration]
-│   │   │   ├── ScalabilityParser.cs # Legacy scale setting parser
-│   │   │   └── PlayerSettingsPrefs.cs # Manages local client preference states
-│   │   │
-│   │   ├── Managers/              # Central architectural routing orchestrator
-│   │   │   ├── AsaAssetManager.cs # LiveOps background hot-reload engine for silent dynamic updates [🔵 New Integration]
-│   │   │   ├── AsgccPvPMatchManager.cs # Adaptive matchmaking bridge injecting dynamic AI Teammates based on player XP [🔵 New Integration]
-│   │   │   ├── GameSystemBridge.cs # Connects logic blocks with runtime graphical elements
-│   │   │   └── FirebaseBackendManager.cs # Cloud backend adapter service layer
-│   │   │
-│   │   ├── Backend/               # Global Gateway Ecosystem Hub (🔵 New Integration)
-│   │   │   └── GlobalEcosystemGateway.cs # Multi-wallet Web3 cross-chain bridge & Firebase authentication session gateway
-│   │   │
-│   │   ├── Security/              # Anti-cheat layers and signature packaging tools
-│   │   │   ├── SecurityBridge.cs  # Standard security bridge interface
-│   │   │   └── UnityAntiCheatManager.cs # Realtime memory RAM inspection agent
-│   │   │
-│   │   └── UI/                    # TextMeshPro controller adapters for canvas views
-│   │       ├── WalletUIController.cs # Dynamic wallet connection panel handler
-│   │       ├── MatchmakingUI.cs   # Realtime PvP matchmaking queue display controller
-│   │       └── DataFlowVisualizer.cs # Visualizer dashboard for local AI and Web3 operations
-│   │
-│   └── awsan-sultan-art/          # Core digital art assets and pipeline generation logic
-│       └── metadata/
-│           └── 1.json             # Legacy digital asset metadata file for the ASA gallery
 │
-├── blockchain-core/               # Secure Blockchain architecture and EVM protocol layers
-│   ├── contracts/                 # Smart Contracts (Solidity)
-│   │   ├── ASTToken.sol           # Core ecosystem currency tokenomics contract
-│   │   ├── AsaOmnichainAST.sol    # Cross-Chain Bridge interface powered by LayerZero
-│   │   └── PvPRewards.sol         # Autonomous PvP win-to-earn dynamic distribution
+├── 📁 .github/workflows/                     # 🟢 [Branch: feature/ai-integration-liveops] (New Integration)
+│   └── asoep-cross-sync.yml                  # GitHub Actions CI/CD pipeline for automated external SDK injection from ASOEP
+│
+├── 📁 Assets/                                # 🛠️ Active production components directory root for the Unity Engine
+│   │
+│   ├── 📁 Plugins/Nvidia/
+│   │   └── NvidiaEcosystemBridge.cs          # ⚪ [Branch: main] Wrapper hardware bridge for RTX Spark, Reflex, and DLSS pipelines
+│   │
+│   ├── 📁 Scenes/                            # ⚪ [Branch: main] Interactive runtime workspace windows for runtime compilation
+│   │   ├── MainMenuScene.unity               # Standard UI initialization canvas and secure crypto-wallet gateway login
+│   │   └── DemoSimulationScene.unity         # Stress-test simulation canvas dashboard workspace for graphics telemetry
+│   │
+│   ├── 📁 Settings/
+│   │   └── UniversalRenderPipelineAsset.asset # ⚪ [Branch: main] High-Performance Universal Render Pipeline (URP) configuration
+│   │
+│   ├── 📁 Scripts/                           # 💻 Backend core control scripts handling Web3 contracts and gameplay logics
+│   │   │
+│   │   ├── 📁 AI-LiveOps/                    # 🟢 [Branch: feature/ai-integration-liveops] (Dedicated Core AI Subsystem)
+│   │   │   ├── AsgccAiEngine.cs              # Hybrid client-side NVIDIA ACE SDK (v4.3) & Gemini Cloud API Fallback Engine
+│   │   │   └── AsaProceduralGenerator.cs     # Procedural engine managing local runtime metadata logs within PersistentData path
+│   │   │
+│   │   ├── 📁 Core/                          # ⚪ [Core System Pipeline Root Folder]
+│   │   │   ├── AsaAssetManager.cs            # ⚪ [Branch: main] Script managing game assets and texture cache buffers
+│   │   │   ├── AsaMetadataGenerator.cs       # ⚪ [Branch: main] Generates dynamic 45,000 asset traits locally (GTA6 Inspired)
+│   │   │   ├── AsgccAIEngine.cs              # ⚪ [Branch: main] Core legacy AI engine script for context-aware NPCs with XP filters
+│   │   │   ├── AsgccTestingSuite.cs          # ⚪ [Branch: main] Automated testing and validation suite for engine frame rate stability
+│   │   │   ├── GlobalEcosystemGateway.cs     # ⚪ [Branch: main] Legacy master script managing asset routing and exchange integrations
+│   │   │   ├── LayerCombiner.cs              # ⚪ [Branch: main] Script for blending procedural texture layers and injecting skin textures
+│   │   │   ├── PvPMatchManager.cs            # ⚪ [Branch: main] Controller handling real-time Win-to-Earn PvP matches and UI state sync
+│   │   │   ├── RtxMaterialMatcher.cs         # ⚪ [Branch: main] Material mapping script injecting normal/metallic maps for NVIDIA RTX setups
+│   │   │   └── Web3WalletManager.cs          # ⚪ [Branch: main] Web3 hardware wallet provider controller for player authentication
+│   │   │
+│   │   ├── 📁 Config/                        # 🛠️ Client hardware preferences and scalability parsing arrays
+│   │   │   ├── AsgccScalabilityParser.cs     # 🟢 [Branch: feature/ai-integration-liveops] Automated JSON parser for profile matching
+│   │   │   ├── AsgccScalabilityManager.config # 🟢 [Branch: feature/ai-integration-liveops] Multi-platform configuration profile (v1.2)
+│   │   │   ├── ScalabilityParser.cs          # ⚪ [Branch: main] Legacy standalone scalability parser configuration script
+│   │   │   └── PlayerSettingsPrefs.cs        # ⚪ [Branch: main] Manages local cache registry entries for user preference states
+│   │   │
+│   │   ├── 📁 Managers/                      # 🎛️ Live-Ops background updating and asynchronous network data adaptors
+│   │   │   ├── AsaAssetManager.cs            # 🟢 [Branch: feature/ai-integration-liveops] Hot-loader handling background asset caching
+│   │   │   ├── AsgccPvPMatchManager.cs       # 🟢 [Branch: feature/ai-integration-liveops] Passive match listener injecting adaptive AI Teammates
+│   │   │   ├── GameSystemBridge.cs           # ⚪ [Branch: main] Orchestrator connecting discrete code blocks with active render outputs
+│   │   │   └── FirebaseBackendManager.cs     # ⚪ [Branch: main] Enterprise cloud adapter service layer hosting active user profiles
+│   │   │
+│   │   ├── 📁 Backend/                       # 🟢 [Branch: feature/ai-integration-liveops] (Dedicated Cross-Chain Hub)
+│   │   │   └── GlobalEcosystemGateway.cs     # Global unified gateway handling secure multi-wallet cross-chain transactions
+│   │   │
+│   │   ├── 📁 Security/                      # ⚪ [Branch: main] Client anti-cheat runtime protection layers and safety arrays
+│   │   │   ├── SecurityBridge.cs             # Standard interface validating network signatures and transaction handshakes
+│   │   │   └── UnityAntiCheatManager.cs      # Monitored memory RAM tracking inspector blocking commercial injection tools
+│   │   │
+│   │   └── 📁 UI/                            # ⚪ [Branch: main] TextMeshPro canvas display handlers and analytics visualize nodes
+│   │       ├── WalletUIController.cs         # Dynamic script managing wallet UI panel connection states and sign loops
+│   │       ├── MatchmakingUI.cs              # Real-time player tracking display for multiplayer match matchmaking queues
+│   │       └── DataFlowVisualizer.cs         # Engineering monitoring dashboard tracking live AI logic and Web3 network nodes
+│   │
+│   └── 📁 awsan-sultan-art/
+│       ├── metadata/
+│       │   └── 1.json                    # ⚪ [Branch: main] Static corporate asset configuration file for the ASA gallery pool
+│       └── procedural-generator/
+│           └── AsaProceduralGenerator.cs # ⚪ [Branch: main] Procedural asset assembler compiling multi-layer textures via IPFS
+│
+├── 📁 blockchain-core/                       # ⚪ [Branch: main] Institutional EVM multi-chain smart contracts footprint (Solidity)
+│   ├── contracts/
+│   │   ├── ASTToken.sol                      # Native ecosystem tokenomics ledger distributing corporate utility currency
+│   │   ├── AsaOmnichainAST.sol               # Cross-chain interoperability interface powered natively by LayerZero protocol
+│   │   └── PvPRewards.sol                    # Autonomous reward ledger managing mathematical win-to-earn distributions
 │   └── security/
-│       └── SecurityVerification.sol # Advanced on-chain cryptographic safety verification
+│       └── SecurityVerification.sol         # Advanced cryptographic verification verifying off-chain signatures to blockchain
 │
-├── docs/                          # Engineering diagrams, technical flowcharts, whitepapers
-│   ├── DATA_FLOW_DIAGRAM.md       # Interactive mapping of local AI & Web3 infrastructure
-│   ├── DEMO_GUIDE.md              # Blueprint to execute automated multi-node simulations
-│   └── Whitepaper.md              # Corporate B2B positioning strategy documentation
+├── 📁 docs/                                  # ⚪ [Branch: main] System whitepapers, data architecture maps, and diagrams
+│   ├── DATA_FLOW_DIAGRAM.md                  # Interactive node mapping detailing the cloud-to-hardware data pipeline
+│   ├── DEMO_GUIDE.md                         # Technical manual to deploy multi-node network simulation containers
+│   └── Whitepaper.md                         # Strategic positioning documentation for corporate B2B licensing frameworks
 │
-├── game-client/                  # Cross-platform deployment assets and software scaling config
-│   └── config/                   # Legacy configuration files for standalone client compatibility
-│       └── ScalabilityManager.config # Legacy configuration backup file
+├── 📁 game-client/config/
+│   └── ScalabilityManager.config             # ⚪ [Branch: main] Standard legacy configuration backup file for standalone client execution
 │
-├── .github/workflows/             # Cloud DevOps & Multi-Repo Automation Directory [🔵 New Integration]
-│   └── asoep-cross-sync.yml       # GitHub Actions CI/CD pipeline for automated cross-repo SDK injection from ASOEP
+├── 📁 ProjectSettings/                       # ⚪ [Branch: main] Editor build pipelines, player preferences, and compiler flags
+│   ├── ProjectVersion.txt                    # Locks runtime deployment criteria to exact Unity 2022.3.62f1 LTS engine
+│   ├── EditorBuildSettings.asset             # Registry tracking active target scene indices routed for compilation
+│   └── ProjectSettings.asset                 # Holds enterprise corporate branding configurations and application settings
 │
-├── AsgccEcosystemOrchestrator.cs # Multi-platform compiler script (Cloud Stream / WebGL HTML / Native APK) [🔵 New Integration]
-├── .gitignore                     # Optimized Unity 2022 LTS repository tracking filtration manifest file
-└── README.md                      # Comprehensive Arabic/English corporate investment & architecture blueprint file
-ct info, and build configurations
+├── 📄 AsgccEcosystemOrchestrator.cs          # 🟢 [Branch: feature/ai-integration-liveops] Automated compiler for target builds
+├── 📄 .gitignore                             # 🟢 [Branch: feature/ai-integration-liveops] Filtration manifest ignoring local cache paths
+└── 📄 README.md                              # 🟢 [Branch: feature/ai-integration-liveops] Corporate investment blueprint and manifesto
 ```
+
 
 
 ---
@@ -636,44 +646,96 @@ To simulate high-intensity production environments and test infrastructure under
 ## 📁 Detailed Project Repository Blueprint (Updated Docs)
 
 ```text
-awsan-sultan-game-core-crypto/
-├── assets/
-│   └── awsan-sultan-art/
+awsan-sultan-game-core-crypto/ 
+│
+├── 📁 .github/workflows/                     # 🟢 [Branch: feature/ai-integration-liveops] (New Integration)
+│   └── asoep-cross-sync.yml                  # GitHub Actions CI/CD pipeline for automated external SDK injection from ASOEP
+│
+├── 📁 Assets/                                # 🛠️ Active production components directory root for the Unity Engine
+│   │
+│   ├── 📁 Plugins/Nvidia/
+│   │   └── NvidiaEcosystemBridge.cs          # ⚪ [Branch: main] Wrapper hardware bridge for RTX Spark, Reflex, and DLSS pipelines
+│   │
+│   ├── 📁 Scenes/                            # ⚪ [Branch: main] Interactive runtime workspace windows for runtime compilation
+│   │   ├── MainMenuScene.unity               # Standard UI initialization canvas and secure crypto-wallet gateway login
+│   │   └── DemoSimulationScene.unity         # Stress-test simulation canvas dashboard workspace for graphics telemetry
+│   │
+│   ├── 📁 Settings/
+│   │   └── UniversalRenderPipelineAsset.asset # ⚪ [Branch: main] High-Performance Universal Render Pipeline (URP) configuration
+│   │
+│   ├── 📁 Scripts/                           # 💻 Backend core control scripts handling Web3 contracts and gameplay logics
+│   │   │
+│   │   ├── 📁 AI-LiveOps/                    # 🟢 [Branch: feature/ai-integration-liveops] (Dedicated Core AI Subsystem)
+│   │   │   ├── AsgccAiEngine.cs              # Hybrid client-side NVIDIA ACE SDK (v4.3) & Gemini Cloud API Fallback Engine
+│   │   │   └── AsaProceduralGenerator.cs     # Procedural engine managing local runtime metadata logs within PersistentData path
+│   │   │
+│   │   ├── 📁 Core/                          # ⚪ [Core System Pipeline Root Folder]
+│   │   │   ├── AsaAssetManager.cs            # ⚪ [Branch: main] Script managing game assets and texture cache buffers
+│   │   │   ├── AsaMetadataGenerator.cs       # ⚪ [Branch: main] Generates dynamic 45,000 asset traits locally (GTA6 Inspired)
+│   │   │   ├── AsgccAIEngine.cs              # ⚪ [Branch: main] Core legacy AI engine script for context-aware NPCs with XP filters
+│   │   │   ├── AsgccTestingSuite.cs          # ⚪ [Branch: main] Automated testing and validation suite for engine frame rate stability
+│   │   │   ├── GlobalEcosystemGateway.cs     # ⚪ [Branch: main] Legacy master script managing asset routing and exchange integrations
+│   │   │   ├── LayerCombiner.cs              # ⚪ [Branch: main] Script for blending procedural texture layers and injecting skin textures
+│   │   │   ├── PvPMatchManager.cs            # ⚪ [Branch: main] Controller handling real-time Win-to-Earn PvP matches and UI state sync
+│   │   │   ├── RtxMaterialMatcher.cs         # ⚪ [Branch: main] Material mapping script injecting normal/metallic maps for NVIDIA RTX setups
+│   │   │   └── Web3WalletManager.cs          # ⚪ [Branch: main] Web3 hardware wallet provider controller for player authentication
+│   │   │
+│   │   ├── 📁 Config/                        # 🛠️ Client hardware preferences and scalability parsing arrays
+│   │   │   ├── AsgccScalabilityParser.cs     # 🟢 [Branch: feature/ai-integration-liveops] Automated JSON parser for profile matching
+│   │   │   ├── AsgccScalabilityManager.config # 🟢 [Branch: feature/ai-integration-liveops] Multi-platform configuration profile (v1.2)
+│   │   │   ├── ScalabilityParser.cs          # ⚪ [Branch: main] Legacy standalone scalability parser configuration script
+│   │   │   └── PlayerSettingsPrefs.cs        # ⚪ [Branch: main] Manages local cache registry entries for user preference states
+│   │   │
+│   │   ├── 📁 Managers/                      # 🎛️ Live-Ops background updating and asynchronous network data adaptors
+│   │   │   ├── AsaAssetManager.cs            # 🟢 [Branch: feature/ai-integration-liveops] Hot-loader handling background asset caching
+│   │   │   ├── AsgccPvPMatchManager.cs       # 🟢 [Branch: feature/ai-integration-liveops] Passive match listener injecting adaptive AI Teammates
+│   │   │   ├── GameSystemBridge.cs           # ⚪ [Branch: main] Orchestrator connecting discrete code blocks with active render outputs
+│   │   │   └── FirebaseBackendManager.cs     # ⚪ [Branch: main] Enterprise cloud adapter service layer hosting active user profiles
+│   │   │
+│   │   ├── 📁 Backend/                       # 🟢 [Branch: feature/ai-integration-liveops] (Dedicated Cross-Chain Hub)
+│   │   │   └── GlobalEcosystemGateway.cs     # Global unified gateway handling secure multi-wallet cross-chain transactions
+│   │   │
+│   │   ├── 📁 Security/                      # ⚪ [Branch: main] Client anti-cheat runtime protection layers and safety arrays
+│   │   │   ├── SecurityBridge.cs             # Standard interface validating network signatures and transaction handshakes
+│   │   │   └── UnityAntiCheatManager.cs      # Monitored memory RAM tracking inspector blocking commercial injection tools
+│   │   │
+│   │   └── 📁 UI/                            # ⚪ [Branch: main] TextMeshPro canvas display handlers and analytics visualize nodes
+│   │       ├── WalletUIController.cs         # Dynamic script managing wallet UI panel connection states and sign loops
+│   │       ├── MatchmakingUI.cs              # Real-time player tracking display for multiplayer match matchmaking queues
+│   │       └── DataFlowVisualizer.cs         # Engineering monitoring dashboard tracking live AI logic and Web3 network nodes
+│   │
+│   └── 📁 awsan-sultan-art/
 │       ├── metadata/
-│       │   └── 1.json              # Digital asset metadata file uploaded for the ASA gallery.
+│       │   └── 1.json                    # ⚪ [Branch: main] Static corporate asset configuration file for the ASA gallery pool
 │       └── procedural-generator/
-│           └── AsaProceduralGenerator.cs  # Procedural generation script for asset layering from IPFS.
-├── blockchain-core/              # Core blockchain technology and smart contracts directory.
-│   ├── contracts/                # Contains fundamental smart contracts for the project:
-│   │   ├── ASTToken.sol          # Smart contract for generating and managing the native \$AST token.
-│   │   ├── AsaOmnichainAST.sol   # Smart contract dedicated to multi-chain (Omnichain) bridging and burns.
-│   │   └── PvPRewards.sol        # Smart contract for distributing PvP match rewards, tracking XP and profiles.
-│   └── security/                 # Contains digital security verification and auditing systems:
-│       └── SecurityVerification.sol  # Smart contract for on-chain cryptographic security audits.
-├── docs/                         # Documentation directory containing technical whitepapers and diagrams (Updated):
-│   ├── DATA_FLOW_DIAGRAM.md      # Engineering data flow diagram for cross-platform system integration.
-│   ├── DEMO_GUIDE.md             # Developer manual for quick-start deployment, hardware checks, and sweeps.
-│   └── TECHNICAL_WHITEPAPER.md   # Comprehensive whitepaper detailing engine architecture and tokenomics.
-├── game-client/                  # Main cross-platform game client and software engine architecture.
-│   ├── config/                   # Configuration files for dynamic performance and hardware scaling:
-│   │   └── ScalabilityManager.config # Configuration file for mobile compatibility and optimization tuning.
-│   ├── plugins/                  # Official plugins and official software development kits (e.g., NVIDIA SDKs):
-│   │   └── NvidiaEcosystemBridge.cs # Ecosystem bridge script for connecting proprietary NVIDIA technologies.
-│   └── scripts/                  # Backend control scripts for handling Web3 connections and game logic:
-│       ├── AsaAssetManager.cs    # Script for managing game assets and digital art gallery texture cache buffers.
-│       ├── AsaMetadataGenerator.cs # Generates dynamic 45,000 asset traits locally (GTA6 Inspired).
-│       ├── AsgccAiEngine.cs      # Core AI engine script for running context-aware NPCs locally with XP filters.
-│       ├── AsgccTestingSuite.cs  # Automated testing and validation suite for evaluating engine performance.
-│       ├── GlobalEcosystemGateway.cs # Global gateway script for handling multi-wallet and exchange integrations.
-│       ├── LayerCombiner.cs      # Script for blending and combining graphical layers and injecting skin textures.
-│       ├── PvPMatchManager.cs    # Controller for managing PvP matchmaking, battles, and real-time UI state sync.
-│       ├── RtxMaterialMatcher.cs # Material mapping script for high-end NVIDIA RTX graphics configurations.
-│       └── Web3WalletManager.cs  # Web3 wallet controller for secure player authentication and transactions.
-├── .gitignore                    # Specifies intentionally untracked files that Git should ignore.
-├── ASGCC LOGO.png                # Official visual brand logo displayed on the landing interface.
-├── CONTRIBUTING.md               # Legal framework governing intellectual software properties in dual languages.
-└── README.md                     # Main documentation file for the repository layout (the file you are reading).
+│           └── AsaProceduralGenerator.cs # ⚪ [Branch: main] Procedural asset assembler compiling multi-layer textures via IPFS
+│
+├── 📁 blockchain-core/                       # ⚪ [Branch: main] Institutional EVM multi-chain smart contracts footprint (Solidity)
+│   ├── contracts/
+│   │   ├── ASTToken.sol                      # Native ecosystem tokenomics ledger distributing corporate utility currency
+│   │   ├── AsaOmnichainAST.sol               # Cross-chain interoperability interface powered natively by LayerZero protocol
+│   │   └── PvPRewards.sol                    # Autonomous reward ledger managing mathematical win-to-earn distributions
+│   └── security/
+│       └── SecurityVerification.sol         # Advanced cryptographic verification verifying off-chain signatures to blockchain
+│
+├── 📁 docs/                                  # ⚪ [Branch: main] System whitepapers, data architecture maps, and diagrams
+│   ├── DATA_FLOW_DIAGRAM.md                  # Interactive node mapping detailing the cloud-to-hardware data pipeline
+│   ├── DEMO_GUIDE.md                         # Technical manual to deploy multi-node network simulation containers
+│   └── Whitepaper.md                         # Strategic positioning documentation for corporate B2B licensing frameworks
+│
+├── 📁 game-client/config/
+│   └── ScalabilityManager.config             # ⚪ [Branch: main] Standard legacy configuration backup file for standalone client execution
+│
+├── 📁 ProjectSettings/                       # ⚪ [Branch: main] Editor build pipelines, player preferences, and compiler flags
+│   ├── ProjectVersion.txt                    # Locks runtime deployment criteria to exact Unity 2022.3.62f1 LTS engine
+│   ├── EditorBuildSettings.asset             # Registry tracking active target scene indices routed for compilation
+│   └── ProjectSettings.asset                 # Holds enterprise corporate branding configurations and application settings
+│
+├── 📄 AsgccEcosystemOrchestrator.cs          # 🟢 [Branch: feature/ai-integration-liveops] Automated compiler for target builds
+├── 📄 .gitignore                             # 🟢 [Branch: feature/ai-integration-liveops] Filtration manifest ignoring local cache paths
+└── 📄 README.md                              # 🟢 [Branch: feature/ai-integration-liveops] Corporate investment blueprint and manifesto
 ```
+
 
 ---
 
