@@ -323,7 +323,7 @@ awsan-sultan-game-core-crypto/
 ├── 📁 .github/workflows/                     # 🟢 [Branch: feature/ai-integration-liveops] (مستحدث)
 │   └── asoep-cross-sync.yml                  # سكربت الأتمتة السحابية CI/CD لجلب الـ SDK تلقائياً من ASOEP
 │
-├── 📁 Assets/                                # 🛠️ المجلد التشغيلي النشط لجذور محرك Unity
+├── 📁 Assets/                                # 🛠️ المجلد التشغيلي النشط لجذور محرك Unity (الموحد)
 │   │
 │   ├── 📁 Plugins/Nvidia/
 │   │   └── NvidiaEcosystemBridge.cs          # ⚪ [Branch: main] جسر نيفيديا لتفعيل ميزات DLSS/Reflex وتتبع الأشعة
@@ -376,24 +376,25 @@ awsan-sultan-game-core-crypto/
 │   │       ├── MatchmakingUI.cs              # واجهة عرض طابور تتبع مباريات الـ PvP الحية
 │   │       └── DataFlowVisualizer.cs         # لوحة مراقبة تدفق بيانات الذكاء الاصطناعي والويب 3
 │   │
-│   └── 📁 awsan-sultan-art/
+│   └── 📁 awsan-sultan-art/                  # 🖼️ معرض الفنون الفنية والأصول المدمجة من النظامين
 │       ├── metadata/
-│       │   └── 1.json                    # ⚪ [Branch: main] ملف البيانات الوصفية الأساسي لمعرض الفنون (ASA)
+│       │   └── 1.json                    # ملف البيانات الوصفية الرقمية المرفوع لنظام معرض ASA المطور لـ 45 ألف فن
 │       └── procedural-generator/
-│           └── AsaProceduralGenerator.cs # ⚪ [Branch: main] سكربت التوليد الإجرائي لتركيب طبقات الأصول من IPFS
+│           └── AsaProceduralGenerator.cs # سكربت التوليد الإجرائي لتركيب وطبقات الأصول الفنية من الـ IPFS
 │
 ├── 📁 blockchain-core/                       # ⚪ [Branch: main] البنية التحتية لعقود البلوكشين الذكية (Solidity)
-│   ├── contracts/
-│   │   ├── ASTToken.sol                      # عقد العملة النفعية الرسمية للمشروع وتوزيع التوكنز
-│   │   ├── AsaOmnichainAST.sol               # واجهة الجسر متعدد السلاسل المدعوم بـ LayerZero
-│   │   └── PvPRewards.sol                    # عقد التوزيع الآلي اللامركزي لعوائد انتصارات الـ PvP
-│   └── security/
-│       └── SecurityVerification.sol         # ناقلات التحقق التشفيري لحماية العقود أونلاين
+│   ├── contracts/                            # العقود الذكية الأساسية للمشروع:
+│   │   ├── ASTToken.sol                      # عقد إنشاء وتدبير توكن $AST النفعي الرسمي للمشروع وتوزيع التوكنز
+│   │   ├── AsaOmnichainAST.sol               # واجهة الجسر متعدد السلاسل المدعوم بـ LayerZero وحرق الرسوم تلقائياً
+│   │   └── PvPRewards.sol                    # عقد التوزيع الآلي اللامركزي لعوائد انتصارات الـ PvP وملفات اللاعبين على السلسلة
+│   └── security/                             # ملفات وأنظمة التحقق الأمني الرقمي على السلسلة:
+│       └── SecurityVerification.sol          # ناقلات التحقق والتعدين التشفيري لحماية العقود أونلاين
 │
-├── 📁 docs/                                  # ⚪ [Branch: main] وثائق ورسم مسارات تدفق البيانات
-│   ├── DATA_FLOW_DIAGRAM.md                  # مخطط مسارات تدفق البيانات المحلية والسحابية
-│   ├── DEMO_GUIDE.md                         # دليل تشغيل المحاكاة الآلية لعقد المحرك المتعددة
-│   └── Whitepaper.md                         # مستند التوجه الاستراتيجي والتجاري لقطاع الشركات
+├── 📁 docs/                                  # 📄 مجلد التوثيق والملفات التقنية وهندسة المشروع (محدث بالكامل)
+│   ├── DATA_FLOW_DIAGRAM.md                  # مخطط مسارات تدفق البيانات المحلية والسحابية والتكامل البرمجي المشترك
+│   ├── DEMO_GUIDE.md                         # دليل المطورين والشركات للتشغيل السريع وفحص العتاد والأداء وعقد المحرك
+│   ├── Whitepaper.md                         # مستند التوجه الاستراتيجي والتجاري لقطاع الشركات
+│   └── TECHNICAL_WHITEPAPER.md               # الورقة البيضاء التقنية الشاملة للنظام البيئي واقتصاد الـ Web3
 │
 ├── 📁 game-client/config/
 │   └── ScalabilityManager.config             # ⚪ [Branch: main] ملف إعدادات التوافق والموازنة التقليدية القديمة
@@ -986,45 +987,96 @@ await AsgccTestingSuite.Instance.ExecuteFullGameLoopSimulationAsync();
 ## 📁 المخطط التفصيلي لبنية مستودع المشروع المعماري الحقيقي (Updated Docs)
 
 ```text
-awsan-sultan-game-core-crypto/
-├── assets/
-│   └── awsan-sultan-art/
+awsan-sultan-game-core-crypto/ 
+│
+├── 📁 .github/workflows/                     # 🟢 [Branch: feature/ai-integration-liveops] (مستحدث)
+│   └── asoep-cross-sync.yml                  # سكربت الأتمتة السحابية CI/CD لجلب الـ SDK تلقائياً من ASOEP
+│
+├── 📁 Assets/                                # 🛠️ المجلد التشغيلي النشط لجذور محرك Unity (الموحد)
+│   │
+│   ├── 📁 Plugins/Nvidia/
+│   │   └── NvidiaEcosystemBridge.cs          # ⚪ [Branch: main] جسر نيفيديا لتفعيل ميزات DLSS/Reflex وتتبع الأشعة
+│   │
+│   ├── 📁 Scenes/                            # ⚪ [Branch: main] مشاهد بيئة العمل والتشغيل اللحظي للمحرك
+│   │   ├── MainMenuScene.unity               # واجهة القائمة الرئيسية وتسجيل دخول بوابة المحفظة الرقمية
+│   │   └── DemoSimulationScene.unity         # بيئة محاكاة واختبار أداء العتاد والمكونات الرسومية
+│   │
+│   ├── 📁 Settings/
+│   │   └── UniversalRenderPipelineAsset.asset # ⚪ [Branch: main] ملف تكوين الرسوميات الهجينة عالية الأداء URP
+│   │
+│   ├── 📁 Scripts/                           # 💻 السكربتات البرمجية الحاكمة للمحرك واقتصاد الـ Web3
+│   │   │
+│   │   ├── 📁 AI-LiveOps/                    # 🟢 [Branch: feature/ai-integration-liveops] (مجلد مستحدث)
+│   │   │   ├── AsgccAiEngine.cs              # محرك الـ AI الهجين المطور (NVIDIA ACE v4.3 / Gemini Cloud API)
+│   │   │   └── AsaProceduralGenerator.cs     # المولد الإجرائي المطور لحفظ البيانات صامتاً في الـ PersistentData
+│   │   │
+│   │   ├── 📁 Core/                          # ⚪ [Core System Pipeline Root Folder]
+│   │   │   ├── AsaAssetManager.cs            # ⚪ [Branch: main] سكربت إدارة الأصول ومخازن التخزين المؤقت للأنسجة
+│   │   │   ├── AsaMetadataGenerator.cs       # ⚪ [Branch: main] توليد الخصائص الديناميكية الموضعية لـ 45 ألف فن رقمي
+│   │   │   ├── AsgccAIEngine.cs              # ⚪ [Branch: main] الكود الأصلي لمحرك الـ AI ذو المرشحات الأمنية للـ XP
+│   │   │   ├── AsgccTestingSuite.cs          # ⚪ [Branch: main] حزمة الاختبارات المؤتمتة لفحص استقرار الأداء الرسومي
+│   │   │   ├── GlobalEcosystemGateway.cs     # ⚪ [Branch: main] السكربت المصدري للبوابة العالمية لإدارة عمليات التبادل
+│   │   │   ├── LayerCombiner.cs              # ⚪ [Branch: main] سكربت دمج الطبقات الرسومية وحقن خامات الجلد للـ AI
+│   │   │   ├── PvPMatchManager.cs            # ⚪ [Branch: main] متحكم معارك الـ PvP وتوزيع مكافآت الـ Web3 الأصلية
+│   │   │   ├── RtxMaterialMatcher.cs         # ⚪ [Branch: main] سكربت مطابقة خامات RTX وتتبع المسار لبطاقات نيفيديا
+│   │   │   └── Web3WalletManager.cs          # ⚪ [Branch: main] متحكم التحقق والربط الآمن بمحفظة اللاعب التشفيرية
+│   │   │
+│   │   ├── 📁 Config/                        # 🛠️ ملفات ومحللات بروفايلات الأداء ومصفوفات الرندرة
+│   │   │   ├── AsgccScalabilityParser.cs     # 🟢 [Branch: feature/ai-integration-liveops] محلل بروفايلات الـ JSON المطور
+│   │   │   ├── AsgccScalabilityManager.config # 🟢 [Branch: feature/ai-integration-liveops] ملف بروفايلات الأجهزة عابر المنصات
+│   │   │   ├── ScalabilityParser.cs          # ⚪ [Branch: main] محلل الإعدادات الرسومية التقليدي القديم
+│   │   │   └── PlayerSettingsPrefs.cs        # ⚪ [Branch: main] إدارة وتخزين التفضيلات المحلية لجهاز العميل
+│   │   │
+│   │   ├── 📁 Managers/                      # 🎛️ قطاع التحديثات الصامتة والمزامنة وهياكل الخدمة
+│   │   │   ├── AsaAssetManager.cs            # 🟢 [Branch: feature/ai-integration-liveops] Hot-Loader للتحميل الصامت للأصول
+│   │   │   ├── AsgccPvPMatchManager.cs       # 🟢 [Branch: feature/ai-integration-liveops] جسر المراقبة الخارجي وحقن الـ AI Teammates
+│   │   │   ├── GameSystemBridge.cs           # ⚪ [Branch: main] المنسق البرمجي لربط كتل المنطق بالرندرة الرسومية
+│   │   │   └── FirebaseBackendManager.cs     # ⚪ [Branch: main] طبقة مهايئ الخدمات لإدارة جلسات الخادم السحابي
+│   │   │
+│   │   ├── 📁 Backend/                       # 🟢 [Branch: feature/ai-integration-liveops] (مجلد مستحدث)
+│   │   │   └── GlobalEcosystemGateway.cs     # البوابة العالمية لإدارة التحقق عابر الشبكات ومزامنة رصيد المحفظة حياً
+│   │   │
+│   │   ├── 📁 Security/                      # ⚪ [Branch: main] جدران الحماية الأمنية ومنع أدوات الغش
+│   │   │   ├── SecurityBridge.cs             # واجهة معايير الحماية الأمنية الموحدة للشبكة
+│   │   │   └── UnityAntiCheatManager.cs      # عميل فحص ذاكرة الـ RAM حياً لمنع التلاعب في الأرقام
+│   │   │
+│   │   └── 📁 UI/                            # ⚪ [Branch: main] واجهات العرض ومراقبة تدفق البيانات للاعب
+│   │       ├── WalletUIController.cs         # متحكم لوحة ربط وتأكيد حساب المحفظة الرقمية
+│   │       ├── MatchmakingUI.cs              # واجهة عرض طابور تتبع مباريات الـ PvP الحية
+│   │       └── DataFlowVisualizer.cs         # لوحة مراقبة تدفق بيانات الذكاء الاصطناعي والويب 3
+│   │
+│   └── 📁 awsan-sultan-art/                  # 🖼️ معرض الفنون الفنية والأصول المدمجة من النظامين
 │       ├── metadata/
-│       │   └── 1.json              # ملف البيانات الوصفية الرقمية المرفوع لنظام معرض ASA
+│       │   └── 1.json                    # ملف البيانات الوصفية الرقمية المرفوع لنظام معرض ASA المطور لـ 45 ألف فن
 │       └── procedural-generator/
-│           └── AsaProceduralGenerator.cs  # سكربت التوليد الإجرائي لطبقات الأصول الفنية من الـ IPFS
-├── blockchain-core/              # المجلد الأساسي لتقنيات البلوكشين والعقود الذكية
-│   ├── contracts/                # مجلد يحتوي على العقود الذكية الأساسية للمشروع:
-│   │   ├── ASTToken.sol          # عقد إنشاء وتدبير توكن \$AST المميز للمشروع
-│   │   ├── AsaOmnichainAST.sol   # عقد ذكي مخصص للربط ونقل التوكن عابر السلاسل وحرق الرسوم تلقائياً
-│   │   └── PvPRewards.sol        # عقد توزيع مكافآت مباريات PvP وحساب الجوائز وملفات اللاعبين على السلسلة
-│   └── security/                 # مجلد يحتوي على ملفات وأنظمة التحقق الأمني الرقمي على السلسلة:
-│       └── SecurityVerification.sol  # عقد ذكي مخصص لعمليات التحقق والتدقيق الأمني التشفيري
-├── docs/                         # مجلد التوثيق والملفات التقنية والورقة البيضاء لهندسة المشروع (محدث):
-│   ├── DATA_FLOW_DIAGRAM.md      # مخطط تدفق البيانات الهندسي للمشروع والتكامل البرمجي المشترك
-│   ├── DEMO_GUIDE.md             # دليل المطورين والشركات للتشغيل السريع وفحص العتاد والأداء
-│   └── TECHNICAL_WHITEPAPER.md   # الورقة البيضاء التقنية الشاملة لبنية المحرك والاقتصاد الرقمي وعوائد الرسوم
-├── game-client/                  # مجلد العميل الخاص بمحرك اللعبة والربط البرمجي عبر المنصات
-│   ├── config/                   # مجلد يحتوي على ملفات الإعدادات وتوسيع الأداء ديناميكياً:
-│   │   └── ScalabilityManager.config # ملف تكوين وضبط مرونة الأداء والتوافق مع الهواتف المحمولة والعتاد
-│   ├── plugins/                  # مجلد الإضافات وحزم التطوير الرسمية (مثل حزم SDK لـ NVIDIA):
-│   │   └── NvidiaEcosystemBridge.cs # سكربت الربط البرمجي البريدج الموحد لربط بيئة عمل وتقنيات نيفيديا
-│   └── scripts/                  # مجلد أكواد التحكم الخلفية لإدارة منطق اللعبة والربط البرمجي لبيئة العمل:
-│       ├── AsaAssetManager.cs    # سكربت إدارة أصول معرض الفن الرقمي واللعبة وتأمين كاش الخامات المستدعاة
-│       ├── AsaMetadataGenerator.cs # توليد إجرائي محلي لخصائص الـ 45 ألف لوحة ومستويات الندرة (مستوحى من GTA6)
-│       ├── AsgccAiEngine.cs      # سكربت محرك الذكاء الاصطناعي لتشغيل الـ NPCs محلياً وربطها بالـ XP لحقن الحوارات
-│       ├── AsgccTestingSuite.cs   # حزمة برمجيات الفحص واختبار أداء وكفاءة عمل المحرك ومحاكاة الضغط والـ FPS
-│       ├── GlobalEcosystemGateway.cs # بوابة النظام البيئي الهجين للربط مع المحافظ والمتاجر العالمية والـ CEX وحساب الرسوم
-│       ├── LayerCombiner.cs      # سكربت دمج ومعالجة الطبقات البرمجية والرسومية وحقن الـ Textures وخصائص الـ Skin المخصص
-│       ├── PvPMatchManager.cs    # متحكم تنظيم مباريات الـ PvP وتوزيع مكافأة الـ 150 XP والتوكنز حياً وتحديث الـ UI
-│       ├── RtxMaterialMatcher.cs # سكربت مطابقة وإعداد خامات RTX وتفعيل الـ Keywords والـ Path Tracing والـ Shaders
-│       └── Web3WalletManager.cs  # متحكم ربط وإدارة محافط الـ Web3 الرقمية للاعبين والتحقق الآمن
-├── .gitignore                    # ملف تخصيص استبعاد الملفات والبيانات غير المرغوبة من التتبع والمزامنة
-├── ASGCC LOGO.png                # الشعار المرئي الرسمي الخاص بالعلامة التجارية للمشروع المعروض في الواجهة
-├── CONTRIBUTING.md               # وثيقة الشروط القانونية وحماية الملكية الفكرية والبرمجية الحصرية للمشروع بلغتين
-└── README.md                     # ملف التوثيق الأساسي والمخطط التوضيحي للمستودع الحالي (الملف الذي تقرأه الآن)
+│           └── AsaProceduralGenerator.cs # سكربت التوليد الإجرائي لتركيب وطبقات الأصول الفنية من الـ IPFS
+│
+├── 📁 blockchain-core/                       # ⚪ [Branch: main] البنية التحتية لعقود البلوكشين الذكية (Solidity)
+│   ├── contracts/                            # العقود الذكية الأساسية للمشروع:
+│   │   ├── ASTToken.sol                      # عقد إنشاء وتدبير توكن $AST النفعي الرسمي للمشروع وتوزيع التوكنز
+│   │   ├── AsaOmnichainAST.sol               # واجهة الجسر متعدد السلاسل المدعوم بـ LayerZero وحرق الرسوم تلقائياً
+│   │   └── PvPRewards.sol                    # عقد التوزيع الآلي اللامركزي لعوائد انتصارات الـ PvP وملفات اللاعبين على السلسلة
+│   └── security/                             # ملفات وأنظمة التحقق الأمني الرقمي على السلسلة:
+│       └── SecurityVerification.sol          # ناقلات التحقق والتعدين التشفيري لحماية العقود أونلاين
+│
+├── 📁 docs/                                  # 📄 مجلد التوثيق والملفات التقنية وهندسة المشروع (محدث بالكامل)
+│   ├── DATA_FLOW_DIAGRAM.md                  # مخطط مسارات تدفق البيانات المحلية والسحابية والتكامل البرمجي المشترك
+│   ├── DEMO_GUIDE.md                         # دليل المطورين والشركات للتشغيل السريع وفحص العتاد والأداء وعقد المحرك
+│   ├── Whitepaper.md                         # مستند التوجه الاستراتيجي والتجاري لقطاع الشركات
+│   └── TECHNICAL_WHITEPAPER.md               # الورقة البيضاء التقنية الشاملة للنظام البيئي واقتصاد الـ Web3
+│
+├── 📁 game-client/config/
+│   └── ScalabilityManager.config             # ⚪ [Branch: main] ملف إعدادات التوافق والموازنة التقليدية القديمة
+│
+├── 📁 ProjectSettings/                       # ⚪ [Branch: main] إعدادات المترجم وتوجيه بناء المشاهد داخل المحرك
+│   ├── ProjectVersion.txt                    # تحديد استخدام نسخة محرك العميل الدقيقة Unity 2022.3.62f1 LTS
+│   ├── EditorBuildSettings.asset             # إدارة وتوجيه مسارات بناء المشاهد النشطة للعبة
+│   └── ProjectSettings.asset                 # حفظ الهوية التجارية للشركة (Branding) وتكوينات البناء النهائي
+│
+├── 📄 AsgccEcosystemOrchestrator.cs          # 🟢 [Branch: feature/ai-integration-liveops] أتمتة المنصات الـ 3 بضغطة زر
+├── 📄 .gitignore                             # 🟢 [Branch: feature/ai-integration-liveops] مmanifest استثناء كاش Unity لعام 2026
+└── 📄 README.md                              # 🟢 [Branch: feature/ai-integration-liveops] مستند العرض الاستثماري والتقني النهائي
 ```
-
 ---
 
 
