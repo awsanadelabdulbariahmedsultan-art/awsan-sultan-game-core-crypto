@@ -26,92 +26,94 @@ Developed and architected exclusively by **Eng. Awsan Adel Abdulbari Ahmed Sulta
 ```text
 awsan-sultan-game-core-crypto/ 
 │
-├── 📁 .github/workflows/                     # 🟢 [Branch: feature/ai-integration-liveops] (New Integration)
-│   └── asoep-cross-sync.yml                  # GitHub Actions CI/CD pipeline for automated external SDK injection from ASOEP
+├── 📁 .github/workflows/                     # 🟢 [Branch: feature/ai-integration-liveops] (New)
+│   └── asoep-cross-sync.yml                  # CI/CD Cloud Automation Script for auto-fetching SDK from ASOEP
 │
-├── 📁 Assets/                                # 🛠️ Active production components directory root for the Unity Engine
+├── 📁 Assets/                                # 🛠️ Active Operational Root Folder for Unity Engine (Unified)
 │   │
 │   ├── 📁 Plugins/Nvidia/
-│   │   └── NvidiaEcosystemBridge.cs          # ⚪ [Branch: main] Wrapper hardware bridge for RTX Spark, Reflex, and DLSS pipelines
+│   │   └── NvidiaEcosystemBridge.cs          # ⚪ [Branch: main] NVIDIA Bridge to enable DLSS/Reflex and Ray Tracing
 │   │
-│   ├── 📁 Scenes/                            # ⚪ [Branch: main] Interactive runtime workspace windows for runtime compilation
-│   │   ├── MainMenuScene.unity               # Standard UI initialization canvas and secure crypto-wallet gateway login
-│   │   └── DemoSimulationScene.unity         # Stress-test simulation canvas dashboard workspace for graphics telemetry
+│   ├── 📁 Scenes/                            # ⚪ [Branch: main] Runtime Engine Scenes and Workspaces
+│   │   ├── MainMenuScene.unity               # Main Menu UI & Crypto Wallet Gateway Login Authentication
+│   │   └── DemoSimulationScene.unity         # Hardware Performance & Graphical Components Benchmark Simulation
 │   │
 │   ├── 📁 Settings/
-│   │   └── UniversalRenderPipelineAsset.asset # ⚪ [Branch: main] High-Performance Universal Render Pipeline (URP) configuration
+│   │   └── UniversalRenderPipelineAsset.asset # ⚪ [Branch: main] High-Performance Hybrid Graphics Configuration File (URP)
 │   │
-│   ├── 📁 Scripts/                           # 💻 Backend core control scripts handling Web3 contracts and gameplay logics
+│   ├── 📁 Scripts/                           # 💻 Core Logic Governing Engine & Web3 Economy
 │   │   │
-│   │   ├── 📁 AI-LiveOps/                    # 🟢 [Branch: feature/ai-integration-liveops] (Dedicated Core AI Subsystem)
-│   │   │   ├── AsgccAiEngine.cs              # Hybrid client-side NVIDIA ACE SDK (v4.3) & Gemini Cloud API Fallback Engine
-│   │   │   └── AsaProceduralGenerator.cs     # Procedural engine managing local runtime metadata logs within PersistentData path
+│   │   ├── 📁 AI-LiveOps/                    # 🟢 [Branch: feature/ai-integration-liveops] (New Folder)
+│   │   │   ├── AsgccAiEngine.cs              # Advanced Hybrid AI Engine (NVIDIA ACE v4.3 / Gemini Cloud API)
+│   │   │   └── AsaProceduralGenerator.cs     # Upgraded Procedural Generator saving data silently to PersistentData
 │   │   │
 │   │   ├── 📁 Core/                          # ⚪ [Core System Pipeline Root Folder]
-│   │   │   ├── AsaAssetManager.cs            # ⚪ [Branch: main] Script managing game assets and texture cache buffers
-│   │   │   ├── AsaMetadataGenerator.cs       # ⚪ [Branch: main] Generates dynamic 45,000 asset traits locally (GTA6 Inspired)
-│   │   │   ├── AsgccAIEngine.cs              # ⚪ [Branch: main] Core legacy AI engine script for context-aware NPCs with XP filters
-│   │   │   ├── AsgccTestingSuite.cs          # ⚪ [Branch: main] Automated testing and validation suite for engine frame rate stability
-│   │   │   ├── GlobalEcosystemGateway.cs     # ⚪ [Branch: main] Legacy master script managing asset routing and exchange integrations
-│   │   │   ├── LayerCombiner.cs              # ⚪ [Branch: main] Script for blending procedural texture layers and injecting skin textures
-│   │   │   ├── PvPMatchManager.cs            # ⚪ [Branch: main] Controller handling real-time Win-to-Earn PvP matches and UI state sync
-│   │   │   ├── RtxMaterialMatcher.cs         # ⚪ [Branch: main] Material mapping script injecting normal/metallic maps for NVIDIA RTX setups
-│   │   │   └── Web3WalletManager.cs          # ⚪ [Branch: main] Web3 hardware wallet provider controller for player authentication
+│   │   │   ├── AsaAssetManager.cs            # ⚪ [Branch: main] Asset Management & Texture Cache Repositories Script
+│   │   │   ├── AsaMetadataGenerator.cs       # ⚪ [Branch: main] Dynamic In-Situ Metadata Generation for 45k Digital Arts
+│   │   │   ├── AsgccAIEngine.cs              # ⚪ [Branch: main] Original AI Engine Code with Security Filters for XP
+│   │   │   ├── AsgccTestingSuite.cs          # ⚪ [Branch: main] Automated Testing Suite for Graphical Performance Stability
+│   │   │   ├── GlobalEcosystemGateway.cs     # ⚪ [Branch: main] Global Gateway Source Script for Exchange Operations
+│   │   │   ├── LayerCombiner.cs              # ⚪ [Branch: main] Graphical Layer Combiner & Skin Texture Injection for AI
+│   │   │   ├── PvPMatchManager.cs            # ⚪ [Branch: main] PvP Match Controller & Native Web3 Rewards Distribution
+│   │   │   ├── RtxMaterialMatcher.cs         # ⚪ [Branch: main] RTX Material Matcher & Path Tracing Script for NVIDIA GPUs
+│   │   │   └── Web3WalletManager.cs          # ⚪ [Branch: main] Secure Verification & Integration Controller for Player Wallet
 │   │   │
-│   │   ├── 📁 Config/                        # 🛠️ Client hardware preferences and scalability parsing arrays
-│   │   │   ├── AsgccScalabilityParser.cs     # 🟢 [Branch: feature/ai-integration-liveops] Automated JSON parser for profile matching
-│   │   │   ├── AsgccScalabilityManager.config # 🟢 [Branch: feature/ai-integration-liveops] Multi-platform configuration profile (v1.2)
-│   │   │   ├── ScalabilityParser.cs          # ⚪ [Branch: main] Legacy standalone scalability parser configuration script
-│   │   │   └── PlayerSettingsPrefs.cs        # ⚪ [Branch: main] Manages local cache registry entries for user preference states
+│   │   ├── 📁 Config/                        # 🛠️ Performance Profiles, Parsers, and Rendering Matrices
+│   │   │   ├── AsgccScalabilityParser.cs     # 🟢 [Branch: feature/ai-integration-liveops] Upgraded JSON Profile Parser
+│   │   │   ├── AsgccScalabilityManager.config # 🟢 [Branch: feature/ai-integration-liveops] Cross-Platform Device Profile File
+│   │   │   ├── ScalabilityParser.cs          # ⚪ [Branch: main] Traditional/Legacy Graphical Settings Parser
+│   │   │   └── PlayerSettingsPrefs.cs        # ⚪ [Branch: main] Local Client Device Preferences Management & Storage
 │   │   │
-│   │   ├── 📁 Managers/                      # 🎛️ Live-Ops background updating and asynchronous network data adaptors
-│   │   │   ├── AsaAssetManager.cs            # 🟢 [Branch: feature/ai-integration-liveops] Hot-loader handling background asset caching
-│   │   │   ├── AsgccPvPMatchManager.cs       # 🟢 [Branch: feature/ai-integration-liveops] Passive match listener injecting adaptive AI Teammates
-│   │   │   ├── GameSystemBridge.cs           # ⚪ [Branch: main] Orchestrator connecting discrete code blocks with active render outputs
-│   │   │   └── FirebaseBackendManager.cs     # ⚪ [Branch: main] Enterprise cloud adapter service layer hosting active user profiles
+│   │   ├── 📁 Managers/                      # 🎛️ Silent Updates, Synchronization, and Service Architecture Sector
+│   │   │   ├── AsaAssetManager.cs            # 🟢 [Branch: feature/ai-integration-liveops] Hot-Loader for Silent Asset Loading
+│   │   │   ├── AsgccPvPMatchManager.cs       # 🟢 [Branch: feature/ai-integration-liveops] External Observer Bridge & AI Teammates Injection
+│   │   │   ├── GameSystemBridge.cs           # ⚪ [Branch: main] Code Coordinator linking Logic Blocks to Graphical Rendering
+│   │   │   └── FirebaseBackendManager.cs     # ⚪ [Branch: main] Service Adapter Layer for Cloud Server Session Management
 │   │   │
-│   │   ├── 📁 Backend/                       # 🟢 [Branch: feature/ai-integration-liveops] (Dedicated Cross-Chain Hub)
-│   │   │   └── GlobalEcosystemGateway.cs     # Global unified gateway handling secure multi-wallet cross-chain transactions
+│   │   ├── 📁 Backend/                       # 🟢 [Branch: feature/ai-integration-liveops] (New Folder)
+│   │   │   └── GlobalEcosystemGateway.cs     # Global Gateway for Cross-Network Verification & Live Wallet Balance Sync
 │   │   │
-│   │   ├── 📁 Security/                      # ⚪ [Branch: main] Client anti-cheat runtime protection layers and safety arrays
-│   │   │   ├── SecurityBridge.cs             # Standard interface validating network signatures and transaction handshakes
-│   │   │   └── UnityAntiCheatManager.cs      # Monitored memory RAM tracking inspector blocking commercial injection tools
+│   │   ├── 📁 Security/                      # ⚪ [Branch: main] Security Firewalls & Anti-Cheat Protocols
+│   │   │   ├── SecurityBridge.cs             # Unified Security Standards Interface for Network Protection
+│   │   │   └── UnityAntiCheatManager.cs      # Live RAM Inspection Client to Prevent Numerical Manipulation/Memory Cheating
 │   │   │
-│   │   └── 📁 UI/                            # ⚪ [Branch: main] TextMeshPro canvas display handlers and analytics visualize nodes
-│   │       ├── WalletUIController.cs         # Dynamic script managing wallet UI panel connection states and sign loops
-│   │       ├── MatchmakingUI.cs              # Real-time player tracking display for multiplayer match matchmaking queues
-│   │       └── DataFlowVisualizer.cs         # Engineering monitoring dashboard tracking live AI logic and Web3 network nodes
+│   │   └── 📁 UI/                            # ⚪ [Branch: main] Interface Displays & Player Data Flow Monitoring
+│   │       ├── WalletUIController.cs         # Crypto Wallet Connection & Confirmation Panel Controller
+│   │       ├── MatchmakingUI.cs              # UI for Tracking Live PvP Matchmaking Queues
+│   │       └── DataFlowVisualizer.cs         # Monitoring Dashboard for AI and Web3 Data Streams
 │   │
-│   └── 📁 awsan-sultan-art/
+│   └── 📁 awsan-sultan-art/                  # 🖼️ Integrated Art Gallery & Asset Pipeline
 │       ├── metadata/
-│       │   └── 1.json                    # ⚪ [Branch: main] Static corporate asset configuration file for the ASA gallery pool
+│       │   └── 1.json                    # Digital Metadata File uploaded for the Upgraded ASA Gallery (45k Arts)
 │       └── procedural-generator/
-│           └── AsaProceduralGenerator.cs # ⚪ [Branch: main] Procedural asset assembler compiling multi-layer textures via IPFS
+│           └── AsaProceduralGenerator.cs # Procedural Generation Script for assembling Asset Layers from IPFS
 │
-├── 📁 blockchain-core/                       # ⚪ [Branch: main] Institutional EVM multi-chain smart contracts footprint (Solidity)
-│   ├── contracts/
-│   │   ├── ASTToken.sol                      # Native ecosystem tokenomics ledger distributing corporate utility currency
-│   │   ├── AsaOmnichainAST.sol               # Cross-chain interoperability interface powered natively by LayerZero protocol
-│   │   └── PvPRewards.sol                    # Autonomous reward ledger managing mathematical win-to-earn distributions
-│   └── security/
-│       └── SecurityVerification.sol         # Advanced cryptographic verification verifying off-chain signatures to blockchain
+├── 📁 blockchain-core/                       # ⚪ [Branch: main] Blockchain Smart Contracts Infrastructure (Solidity)
+│   ├── contracts/                            # Core Smart Contracts for the Project:
+│   │   ├── ASTToken.sol                      # Native \$AST Utility Token Creation, Minting, and Distribution Contract
+│   │   ├── AsaOmnichainAST.sol               # Cross-Chain Bridge Interface Powered by LayerZero with Auto-Fee Burn
+│   │   └── PvPRewards.sol                    # Decentralized Automated Distribution Contract for PvP Wins & On-Chain Profiles
+│   └── security/                             # On-Chain Digital Security & Cryptographic Verification Systems:
+│       └── SecurityVerification.sol          # Cryptographic Verification & Auditing Vectors for Contract Protection Online
 │
-├── 📁 docs/                                  # ⚪ [Branch: main] System whitepapers, data architecture maps, and diagrams
-│   ├── DATA_FLOW_DIAGRAM.md                  # Interactive node mapping detailing the cloud-to-hardware data pipeline
-│   ├── DEMO_GUIDE.md                         # Technical manual to deploy multi-node network simulation containers
-│   └── Whitepaper.md                         # Strategic positioning documentation for corporate B2B licensing frameworks
+├── 📁 docs/                                  # 📄 Documentation, Technical Specifications & Architectural Blueprints (Fully Updated)
+│   ├── DATA_FLOW_DIAGRAM.md                  # Local & Cloud Data Flow Diagram and Cross-Software Integration
+│   ├── DEMO_GUIDE.md                         # Quick-Start Developer & Enterprise Guide for Benchmarking Engine Nodes
+│   ├── Whitepaper.md                         # Commercial & Strategic Direction Document for the Corporate Sector
+│   └── TECHNICAL_WHITEPAPER.md               # Comprehensive Technical Whitepaper for the Ecosystem & Web3 Economy
 │
 ├── 📁 game-client/config/
-│   └── ScalabilityManager.config             # ⚪ [Branch: main] Standard legacy configuration backup file for standalone client execution
+│   └── ScalabilityManager.config             # ⚪ [Branch: main] Traditional/Legacy Compatibility & Scaling Config File
 │
-├── 📁 ProjectSettings/                       # ⚪ [Branch: main] Editor build pipelines, player preferences, and compiler flags
-│   ├── ProjectVersion.txt                    # Locks runtime deployment criteria to exact Unity 2022.3.62f1 LTS engine
-│   ├── EditorBuildSettings.asset             # Registry tracking active target scene indices routed for compilation
-│   └── ProjectSettings.asset                 # Holds enterprise corporate branding configurations and application settings
+├── 📁 ProjectSettings/                       # ⚪ [Branch: main] Compiler Settings & Scene Build Targeting within the Engine
+│   ├── ProjectVersion.txt                    # Target Engine Identification: Unity 2022.3.62f1 LTS Exact Version
+│   ├── EditorBuildSettings.asset             # Active Scene Build Path Routing and Management for the Game
+│   └── ProjectSettings.asset                 # Corporate Branding Identity Preservation & Final Build Pipelines Layout
 │
-├── 📄 AsgccEcosystemOrchestrator.cs          # 🟢 [Branch: feature/ai-integration-liveops] Automated compiler for target builds
-├── 📄 .gitignore                             # 🟢 [Branch: feature/ai-integration-liveops] Filtration manifest ignoring local cache paths
-└── 📄 README.md                              # 🟢 [Branch: feature/ai-integration-liveops] Corporate investment blueprint and manifesto
+├── 📄 AsgccEcosystemOrchestrator.cs          # 🟢 [Branch: feature/ai-integration-liveops] 1-Click 3-Platform Automation Orchestrator
+├── 📄 .gitignore                             # 🟢 [Branch: feature/ai-integration-liveops] Unity Cache Exclusion Manifest for Year 2026
+└── 📄 README.md                              # 🟢 [Branch: feature/ai-integration-liveops] Final Technical & Investment Pitch Deck Document
+
 ```
 
 
