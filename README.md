@@ -38,24 +38,33 @@ awsan-sultan-game-core-crypto/
 │   │   └── UniversalRenderPipelineAsset.asset # High-Performance Hybrid Graphics Configuration
 │   │
 │   ├── Scripts/                   # Backend control scripts handling Web3 connections and game logic
+│   │   │
+│   │   ├── AI-LiveOps/            # 🧠 Core Generative AI & Autonomous Runtime Engines (🔵 New Integration)
+│   │   │   ├── AsgccAiEngine.cs   # Hybrid local NVIDIA ACE SDK (v4.3) & Gemini Cloud API Fallback Engine [Dated: 2026-10-26]
+│   │   │   └── AsaProceduralGenerator.cs # Core procedural engine for loading, caching, and applying textures from IPFS
+│   │   │
 │   │   ├── Core/                  # Heavy Backend Logic & Autonomous Simulation Loops
-│   │   │   ├── AsaAssetManager.cs # Script managing game assets and texture cache buffers
 │   │   │   ├── AsaMetadataGenerator.cs # Generates dynamic 45,000 asset traits locally (GTA6 Inspired)
-│   │   │   ├── AsgccAIEngine.cs   # Core AI engine script for context-aware local NPCs with XP filters
 │   │   │   ├── AsgccTestingSuite.cs # Automated testing and validation suite for engine performance
-│   │   │   ├── GlobalEcosystemGateway.cs # Global gateway script for multi-wallet and exchange integrations
 │   │   │   ├── LayerCombiner.cs   # Script for blending graphical layers and injecting skin textures
-│   │   │   ├── PvPMatchManager.cs # Controller for PvP matchmaking, battles, and real-time UI state sync
+│   │   │   ├── PvPMatchManager.cs # Original standalone Web3 Win-to-Earn PvP Match orchestrator [Main Branch Legacy]
 │   │   │   ├── RtxMaterialMatcher.cs # Material mapping script for high-end NVIDIA RTX configurations
 │   │   │   └── Web3WalletManager.cs # Web3 wallet controller for secure player authentication
 │   │   │
 │   │   ├── Config/                # Scalability parsers and local preference cache controllers
-│   │   │   ├── ScalabilityParser.cs # Parses dynamic hardware scale settings
+│   │   │   ├── AsgccScalabilityParser.cs # Mapped JSON parser to synchronize NVIDIA DLSS 4 & Unity Quality states [🔵 New Integration]
+│   │   │   ├── AsgccScalabilityManager.config # Hardware configuration version (v1.2-LiveOps) profile file [🔵 New Integration]
+│   │   │   ├── ScalabilityParser.cs # Legacy scale setting parser
 │   │   │   └── PlayerSettingsPrefs.cs # Manages local client preference states
 │   │   │
 │   │   ├── Managers/              # Central architectural routing orchestrator
-│   │   │   └── GameSystemBridge.cs # Connects logic blocks with runtime graphical elements
-│   │   │   └──  FirebaseBackendManager.cs  # Cloud backend adapter service layer (🔵 New Integration)
+│   │   │   ├── AsaAssetManager.cs # LiveOps background hot-reload engine for silent dynamic updates [🔵 New Integration]
+│   │   │   ├── AsgccPvPMatchManager.cs # Adaptive matchmaking bridge injecting dynamic AI Teammates based on player XP [🔵 New Integration]
+│   │   │   ├── GameSystemBridge.cs # Connects logic blocks with runtime graphical elements
+│   │   │   └── FirebaseBackendManager.cs # Cloud backend adapter service layer
+│   │   │
+│   │   ├── Backend/               # Global Gateway Ecosystem Hub (🔵 New Integration)
+│   │   │   └── GlobalEcosystemGateway.cs # Multi-wallet Web3 cross-chain bridge & Firebase authentication session gateway
 │   │   │
 │   │   ├── Security/              # Anti-cheat layers and signature packaging tools
 │   │   │   ├── SecurityBridge.cs  # Standard security bridge interface
@@ -67,10 +76,8 @@ awsan-sultan-game-core-crypto/
 │   │       └── DataFlowVisualizer.cs # Visualizer dashboard for local AI and Web3 operations
 │   │
 │   └── awsan-sultan-art/          # Core digital art assets and pipeline generation logic
-│       ├── metadata/
-│       │   └── 1.json             # Digital asset metadata file uploaded for the ASA gallery
-│       └── procedural-generator/
-│           └── AsaProceduralGenerator.cs # Procedural generation script for asset layering from IPFS
+│       └── metadata/
+│           └── 1.json             # Legacy digital asset metadata file for the ASA gallery
 │
 ├── blockchain-core/               # Secure Blockchain architecture and EVM protocol layers
 │   ├── contracts/                 # Smart Contracts (Solidity)
@@ -86,13 +93,16 @@ awsan-sultan-game-core-crypto/
 │   └── Whitepaper.md              # Corporate B2B positioning strategy documentation
 │
 ├── game-client/                  # Cross-platform deployment assets and software scaling config
-│   └── config/                   # Configuration files for dynamic performance and hardware scaling
-│       └── ScalabilityManager.config # Configuration file for mobile compatibility and optimization tuning
+│   └── config/                   # Legacy configuration files for standalone client compatibility
+│       └── ScalabilityManager.config # Legacy configuration backup file
 │
-└── ProjectSettings/               # Engine configuration files for compiler & cloud builds
-    ├── ProjectVersion.txt         # Targets exact Unity 2022.3.62f1 LTS Editor
-    ├── EditorBuildSettings.asset  # Manages exact active compiler scenes routing
-    └── ProjectSettings.asset      # B2B Branding, product info, and build configurations
+├── .github/workflows/             # Cloud DevOps & Multi-Repo Automation Directory [🔵 New Integration]
+│   └── asoep-cross-sync.yml       # GitHub Actions CI/CD pipeline for automated cross-repo SDK injection from ASOEP
+│
+├── AsgccEcosystemOrchestrator.cs # Multi-platform compiler script (Cloud Stream / WebGL HTML / Native APK) [🔵 New Integration]
+├── .gitignore                     # Optimized Unity 2022 LTS repository tracking filtration manifest file
+└── README.md                      # Comprehensive Arabic/English corporate investment & architecture blueprint file
+ct info, and build configurations
 ```
 
 
